@@ -37,7 +37,7 @@
     "hexo-tag-aplayer": "^3.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.12",
+    "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.20.2",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
