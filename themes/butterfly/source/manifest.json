@@ -1,0 +1,59 @@
+{   "lang": "en",
+    "dir": "ltr",
+    "name": "欢乐小王的博客",
+    "description": "happyking",
+    "display": "standalone",
+    "short_name": "HK",
+    "scope": "/",
+    "start_url": "/",
+    "id":"/",
+    "theme_color": "#FF3842",
+    "background_color": "#FF3842",
+    "icons": [
+        {
+            "src": "/img/siteicon/android-chrome-36x36.webp",
+            "sizes": "36x36",
+            "type": "image/webp"
+        },
+        {
+            "src": "/img/siteicon/android-chrome-48x48.webp",
+            "sizes": "48x48",
+            "type": "image/webp"
+        },
+        {
+            "src": "/img/siteicon/android-chrome-72x72.webp",
+            "sizes": "72x72",
+            "type": "image/webp"
+        },
+        {
+            "src": "/img/siteicon/android-chrome-96x96.webp",
+            "sizes": "96x96",
+            "type": "image/webp"
+        },
+        {
+            "src": "/img/siteicon/android-chrome-144x144.webp",
+            "sizes": "144x144",
+            "type": "image/webp"
+        },
+        {
+            "src": "/img/siteicon/android-chrome-192x192.webp",
+            "sizes": "192x192",
+            "type": "image/webp"
+        },
+        {
+            "src": "/img/siteicon/android-chrome-256x256.webp",
+            "sizes": "256x256",
+            "type": "image/webp"
+        },
+        {
+            "src": "/img/siteicon/android-chrome-384x384.webp",
+            "sizes": "384x384",
+            "type": "image/webp"
+        },
+        {
+            "src": "/img/siteicon/android-chrome-512x512.webp",
+            "sizes": "512x512",
+            "type": "image/webp"
+        }
+    ]   
+}

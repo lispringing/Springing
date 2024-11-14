@@ -1,0 +1,32 @@
+{
+  "name": "hexo-theme-happyking",
+  "version": "1.0.0",
+  "description": "A Simple and Card UI Design theme for Hexo",
+  "main": "package.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "butterfly",
+    "Card UI Design",
+    "happyking",
+    "hexo-theme-butterfly"
+  ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/jerryc127/hexo-theme-butterfly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jerryc127/hexo-theme-butterfly/issues",
+    "email": "my@crazywong.com"
+  },
+  "dependencies": {
+    "hexo-renderer-stylus": "^2.0.1",
+    "hexo-renderer-pug": "^3.0.0"
+  },
+  "homepage": "https://blog.happyking.top/",
+  "author": "happyking",
+  "license": "Apache-2.0"
+}

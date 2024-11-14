@@ -1,0 +1,324 @@
+#about-page
+  .author-box
+    .author-img
+      img.no-lightbox(src='https://blog.happyking.top/img/avatar.webp')
+    .image-dot
+  p.p.center.logo.large 关于我
+  p.p.center.small 聚散无常,别来无恙✨
+  .author-content
+    .author-content-item.myInfoAndSayHello
+      .title1 你好，很高兴认识你👋
+      .title2
+        | 我叫
+        span.inline-word 王健兴
+      .title1
+        | 是一名 学生、独立开发者、
+        span.inline-word 博主
+    .aboutsiteTips.author-content-item
+      .author-content-item-tips 追求
+      h2
+        | 源于
+        br
+        | 热爱而去
+        span.inline-word 感受
+        .mask
+          span.first-tips 学习
+          |
+          span 生活
+          |
+          span(data-up) 程序
+          |
+          span(data-show) 体验
+
+  .hello-about
+    .cursor(style='translate:none;rotate:none;scale:none;transform:translate(721px,180px)')
+    .shapes
+      .shape.shape-1(style='translate:none;rotate:none;scale:none;transform:translate(721px,180px)')
+      .shape.shape-2(style='translate:none;rotate:none;scale:none;transform:translate(721px,180px)')
+      .shape.shape-3(style='translate:none;rotate:none;scale:none;transform:translate(721px,180px)')
+    .content
+      h1 欢乐小王
+
+  .author-content
+    .author-content-item.skills
+      .card-content
+        .author-content-item-tips 技能
+        span.author-content-item-title 目前掌握的技能
+        .skills-style-group
+          .tags-group-all
+            .tags-group-wrapper
+              each i in site.data.creativity
+                - const evenNum = i.creativity_list.filter((x, index) => index % 2 === 0);
+                - const oddNum = i.creativity_list.filter((x, index) => index % 2 === 1);
+                each item, index in i.creativity_list
+                  if ((index+1 <= evenNum.length) && (index+1 <= oddNum.length))
+                    .tags-group-icon-pair
+                      .tags-group-icon(style=`background: ${evenNum[index].color}`)
+                        img.no-lightbox(title=evenNum[index].name, src=evenNum[index].icon)
+                      .tags-group-icon(style=`background: ${oddNum[index].color}`)
+                        img.no-lightbox(title=oddNum[index].name, src=oddNum[index].icon)
+          .skills-list
+            each i in site.data.creativity
+              each item, index in i.creativity_list
+                .skill-info
+                  .skill-icon(style=`background: ${item.color}`)
+                    img.no-lightbox(title=item.name, src=item.icon)
+                  .skill-name
+                    span=item.name
+            .etc ...
+    .author-content-item.careers
+      .card-content
+        .author-content-item-tips 生涯
+        span.author-content-item-title 我的经历
+        .careers-group
+          .careers-item
+            .circle(style='background:#357ef5')
+            .name 在读高中学生
+        img.author-content-img.no-lightbox(alt='生涯', src='https://bu.dusays.com/2023/07/15/64b29f8f95e79.webp')
+
+  .author-content
+    .about-statistic.author-content-item
+      .card-content
+        .author-content-item-tips 数据
+        span.author-content-item-title 访问统计
+        #statistic
+        .post-tips
+          | 统计支持：
+          a(href='https://invite.51.la/1NzKqTeb?target=V6', target='_blank', rel='noopener nofollow') 51LA
+        .banner-button-group
+          a.banner-button(onclick='pjax.loadUrl("/archives/")', data-pjax-state)
+            i.fas.fa-circle-arrow-up-right
+            |
+            span.banner-button-text 文章隧道
+    .author-content-item-group.column.mapAndInfo
+      .author-content-item.map.single
+        span.map-title
+          | 我现在住在
+          b 中国,山东省,潍坊市
+      .author-content-item.selfInfo.single
+        div
+          span.selfInfo-title 生于
+          |
+          span.selfInfo-content(style='color:#43a6c6') 2006年
+        div
+          span.selfInfo-title 昌邑一中
+          |
+          span.selfInfo-content(style='color:#c69043') 在读学生
+        div
+          span.selfInfo-title 现在职业
+          |
+          span.selfInfo-content(style='color:#b04fe6') 高三学生
+
+  .author-content
+    .author-content-item.personalities
+      .author-content-item-tips 性格
+      span.author-content-item-title 企业家
+      .title2(style='color:#ac899c') ESTP-A
+      .post-tips
+        | 在
+        a(href='https://www.16personalities.com/', target='_blank', rel='noopener nofollow') 16种人格
+        |  了解
+        a(target='_blank', rel='noopener external nofollow', href='https://www.16personalities.com/ch/estp-%E4%BA%BA%E6%A0%BC') 企业家
+      .image
+        img.no-lightbox(src='https://blog.happyking.top/img/企业家.svg')
+    .author-content-item.myphoto
+      img.author-content-img.no-lightbox(alt='自拍', src='https://bu.dusays.com/2023/07/15/64b29fb1af009.webp')
+
+  .author-content
+    .author-content-item.maxim
+      .author-content-item-tips 座右铭
+      span.maxim-title
+        span(style='opacity:.6;margin-bottom:8px') 生活不易烦恼多
+        |
+        span 没钱一样很洒脱
+    .author-content-item.buff
+      .card-content
+        .author-content-item-tips 特长
+        span.buff-title
+          span(style='opacity:.6;margin-bottom:8px')
+            | 玄学解决各种
+            span.inline-word 电脑问题
+          |
+          span
+            | 三百六十行业
+            span.inline-word 样样精通 
+      .card-background-icon
+        i.fas.fa-dice-d20
+
+  .author-content
+    .author-content-item.game-yuanshen
+      .card-content
+        .author-content-item-tips 爱好游戏
+        span.author-content-item-title 反恐精英:全球攻势
+        .content-bottom
+          .icon-group
+          .tips.game-yuanshen-uid Steam好友代码:1223420053
+    .author-content-item.historical-drama
+      .card-content
+        .author-content-item-tips 最近收藏
+        span.author-content-item-title 《真心只能换来绝情》
+        .content-bottom
+          .banner-button-group
+            a.banner-button(onclick='window.open("https://www.bilibili.com/video/BV1aM411b7Z3/?spm_id_from=333.999.0.0&vd_source=b15a0d45559b668abb60c844103e1ece")', data-pjax-state)
+              i.fas.fa-circle-arrow-up-right
+              |
+              span.banner-button-text 点击观看
+
+  .author-content
+    .author-content-item.like-technology
+      .card-content
+        .author-content-item-tips 关注偏好
+        span.author-content-item-title 数码科技
+        .content-bottom
+          .tips 手机、电脑软硬件
+    .author-content-item.like-music
+      .card-content
+        .author-content-item-tips 音乐偏好
+        span.author-content-item-title 电子流行
+        |
+        span.author-content-item-title 欧美浩室
+        .content-bottom
+          .tips 跟欢乐小王一起听音乐
+        .banner-button-group
+          a.banner-button(onclick='window.open("https://music.happyking.top")', data-pjax-state)
+            i.fas.fa-circle-arrow-up-right
+            |
+            span.banner-button-text 立即前往
+  .author-content
+    .create-site-post.author-content-item.single
+      .author-content-item-tips 博主的话
+      h1 还没想好写点什么
+  .author-content
+    .author-content-item.single.reward
+      .author-content-item-tips 致谢
+      span.author-content-item-title 赞赏名单
+      .author-content-item-description 感谢金主爸爸们的赞赏,你们的赞赏让我创作更有动力
+        each i in site.data.reward
+          - let rawData = [...i.reward_list]
+          .reward-list-all
+            - let reward_list_amount = i.reward_list.sort((a,b)=>b.amount -  a.amount)
+            each item, index in reward_list_amount
+              .reward-list-item
+                .reward-list-item-name=item.name
+                .reward-list-bottom-group
+                  if item.amount >= 50
+                    .reward-list-item-money(style='background:var(--anzhiyu-yellow)')=`¥${item.amount}`
+                  else
+                    .reward-list-item-money=`¥${item.amount + (item.suffix ? item.suffix : "")}`
+                  .datatime.reward-list-item-time(datatime=item.datatime)=new Date(item.datatime).toISOString().slice(0, -14)
+          .reward-list-updateDate
+            | 最新更新时间：
+            time.datatime.reward-list-updateDate-time(datatime=rawData[0].datatime)=new Date(rawData[0].datatime).toISOString().slice(0, -14)
+
+script(src="/js/main/about/countup.js")
+script(src="/js/main/about/gsap.js")
+script.
+  (() => {
+    function isInViewPortOfOne(el) {
+      if (!el) return;
+      const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      const offsetTop = el.offsetTop;
+      const scrollTop = document.documentElement.scrollTop;
+      const top = offsetTop - scrollTop;
+      return top <= viewPortHeight;
+    }
+    fetch('https://v6-widget.51.la/v6/JpEoD1xif1bRQ9fx/quote.js').then(res => res.text()).then((data) => {
+        let title = ['最近活跃', '今日人数', '今日访问', '昨日人数', '昨日访问', '本月访问', '总访问量']
+        let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g)
+
+        num = num.map((el) => {
+          let val = el.replace(/(<\/span><span>)/g, '')
+          let str = val.replace(/(<\/span><\/p>)/g, '')
+          return str
+        })
+
+        let statisticEl = document.getElementById('statistic')
+
+        // 自定义不显示哪个或者显示哪个，如下为不显示 最近活跃访客 和 总访问量
+        let statistic = []
+        for (let i = 0; i < num.length; i++) {
+            if (!statisticEl) return
+            if (i == 0 || i == num.length - 1) continue;
+            statisticEl.innerHTML += '<div><span>' + title[i] + '</span><span id='+ title[i] + '>' + num[i] + '</span></div>'
+            queueMicrotask(()=> {
+              statistic.push(new CountUp(title[i], 0, num[i], 0, 2, {
+                  useEasing: true,
+                  useGrouping: true,
+                  separator: ',',
+                  decimal: '.',
+                  prefix: '',
+                  suffix: ''
+              }))
+            })
+        }
+
+        function statisticUP () {
+          let statisticElment = document.querySelector('.about-statistic.author-content-item');
+          if(isInViewPortOfOne(statisticElment)) {
+            for (let i = 0; i < num.length; i++) {
+              if (i == 0 || i == num.length - 1) continue;
+              statistic[i-1].start();
+            }
+            document.removeEventListener('scroll', throttleStatisticUP);
+          }
+        }
+
+        const selfInfoContentYear = new CountUp('selfInfo-content-year', 0, 2002, 0, 2, {
+          useEasing: true,
+          useGrouping: false,
+          separator: ',',
+          decimal: '.',
+          prefix: '',
+          suffix: ''
+        })
+
+        function scrollSelfInfoContentYear() {
+          let selfInfoContentYearElment = document.querySelector('.author-content-item.selfInfo.single');
+          if (selfInfoContentYearElment && isInViewPortOfOne(selfInfoContentYearElment)) {
+            selfInfoContentYear.start()
+            document.removeEventListener('scroll', throttleScrollSelfInfoContentYear);
+          }
+        }
+        const throttleStatisticUP = btf.throttle(statisticUP, 200)
+        document.addEventListener('scroll', throttleStatisticUP, {passive: true})
+
+        const throttleScrollSelfInfoContentYear = btf.throttle(scrollSelfInfoContentYear, 200)
+        document.addEventListener('scroll', throttleScrollSelfInfoContentYear, {passive: true})
+    });
+
+    var pursuitInterval = null;
+      pursuitInterval = setInterval(function () {
+        const show = document.querySelector('span[data-show]')
+        const next = show.nextElementSibling || document.querySelector('.first-tips')
+        const up = document.querySelector('span[data-up]')
+
+        if (up) {
+          up.removeAttribute('data-up')
+        }
+
+        show.removeAttribute('data-show')
+        show.setAttribute('data-up', '')
+
+        next.setAttribute('data-show', '')
+      }, 2000)
+
+      document.addEventListener('pjax:send', function(){
+        clearInterval(pursuitInterval);
+      });
+
+      var helloAboutEl = document.querySelector('.hello-about')
+      helloAboutEl.addEventListener("mousemove", evt => {
+        const mouseX = evt.offsetX;
+        const mouseY = evt.offsetY;
+        gsap.set(".cursor", {
+          x: mouseX,
+          y: mouseY,
+        })
+
+        gsap.to(".shape", {
+          x: mouseX,
+          y: mouseY,
+          stagger: -0.1
+        })
+      })
+  })()

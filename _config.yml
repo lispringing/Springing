@@ -1,0 +1,347 @@
+#hexo配置文件
+title: HappyKing # 网站的名称
+subtitle: '欢迎光临!' # 网站的副标题
+description: '一个分享生活趣事和各种知识的地方' # 网站的描述
+keywords: 欢乐小王,博客,信息技术,教程,IT,我的世界,minecraft,mcbbs,hacker,happykin,曹君宜,曹抽抽,hexo,node.js,小王 # 网站关键词语
+author: 欢乐小王 # 博主名称
+language: zh-CN # 语言(这个无需改动,默认是中文)
+timezone: '' #时钟
+
+# URL
+url: https://blog.happyking.top/ #填写你的网址哦
+root: /
+
+# 链接更短 hexo-abbrlink插件
+permalink: p/:abbrlink/
+abbrlink:
+  alg: crc32  # 算法：crc16(default) and crc32
+  rep: hex    # 进制：dec(default) and hex
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # 不要随便改动
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render: #指定不渲染的文件夹(注意这里默认是source目录的,还有要带“”)
+  #- 'upgrade-your-browser/**' #升级浏览器提示真事
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 12
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+theme: butterfly
+
+#上传配置
+deploy:
+- type: git
+  repo:
+    gitHub: https://XINGMOUREN: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@github.com/XINGMOUREN/XINGMOUREN.github.io.git,master #需要改为自己的仓库
+- type: cjh_bing_url_submitter
+- type: tencent_cdn
+
+#腾讯云刷新
+#见https://blog.happyking.top/p/20230109/
+tencentcdn:
+  secretId: 'AKIDRtRyPglmfM5oNsIizhGcnnZK8nEThwCG' ## 你在https://console.cloud.tencent.com/cam/capi 获取到的SecretId
+  secretKey: '9B4vdItY4ShleMucJuW9br6FC5sa9Xkp' ## 你在https://console.cloud.tencent.com/cam/capi 获取到的SecretKey
+  type: 1 #刷新方式,1为只刷新变更资源,2为刷新网站下的全部缓存
+  timer: 90000 #延时器,单位为毫秒,延时多长时间再执行刷新命令
+
+
+#GitHub统计
+# see https://akilar.top/posts/1f9c68c9/
+gitcalendar:
+  enable: true # 开关
+  priority: 1 #过滤器优先权
+  enable_page: all # 应用页面
+  # butterfly挂载容器
+  layout: # 挂载容器类型
+    type: id
+    name: recent-posts
+    index: 0
+  user: XINGMOUREN #git用户名
+  apiurl: 'https://calendar.happyking.top'
+  minheight:
+    pc: 280px #桌面端最小高度
+    mibile: 0px #移动端最小高度
+  color: "['rgb(145, 145, 145, 0.2)', '#c6ecc1', '#a0e2bb', '#81D8CF', '#70c5d3', '#60a2ce', '#507ac9', '#4356c5', '#423cc4', '#5b3abc', '#7138b6']" #马卡龙色调
+  # color: "['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f']" #浅紫色调
+  #color: "['#ebedf0', '#f0fff4', '#dcffe4', '#bef5cb', '#85e89d', '#34d058', '#28a745', '#22863a', '#176f2c', '#165c26', '#144620']" #翠绿色调
+  #color: "['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c']" #天青色调
+  container: .recent-post-item(style='width:100%;height:auto;padding:10px;') #父元素容器，需要使用pug语法
+  gitcalendar_css: /css/main/gitcalendar.css
+  gitcalendar_js: /js/main/gitcalendar.js
+
+#文章密码
+encrypt:
+	enable: true
+
+#音乐播放器(aplayer)
+aplayer:
+  meting: false
+  asset_inject: false
+
+
+#搜索功能
+#选择性改动,可以选择默认的algolia或者本地搜索,如果选择了algolia的话需要把下面的也配置了
+plugins:
+  - hexo-algoliasearch
+
+#搜索引擎
+# 如果搜索功能用的是这个,那就要配置这个
+algolia:
+  appId: "YS1ZHKBSSM" #前往官网注册获取
+  apiKey: "3cfe0b753138610a4e366d945ea3fda5" #前往官网注册获取
+  adminApiKey: "a6562a3e612a9656df45d1ac2afb08f8" #前往官网注册获取
+  chunkSize: 5000
+  indexName: "hexo_blog"
+  fields:
+    - content:strip:truncate,0,200
+    - tags
+    - permalink
+    - excerpt:strip
+    - title
+    - categories
+
+
+
+#标签外挂
+# see https://akilar.top/posts/615e2dec/
+tag_plugins:
+  enable: true # 开关
+  priority: 2 #过滤器优先权
+  issues: false #issues标签依赖注入开关
+  link:
+    placeholder: https://bu.dusays.com/2023/07/14/64b14651ea895.webp #link_card标签默认的图标图片
+  CDN:
+    anima: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css #动画标签anima的依赖
+    jquery: https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js #issues标签依赖
+    issues: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/issues.js #issues标签依赖
+    iconfont: //at.alicdn.com/t/font_3294602_1f1y3b7pyh2.js #参看https://akilar.top/posts/d2ebecef/
+    carousel: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
+    tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
+
+# 自动生成sitemap
+sitemap: 
+  path: sitemap.xml
+
+# 图片懒加载
+lazyload:
+  enable: false # 是否开启图片懒加载
+  onlypost: true # 是否只对文章的图片做懒加载
+  loadingImg: /img/loading.gif
+  isSPA: true # 这个是为了适配pjax的,针对单页面进行刷新
+  preloadRatio: 3 # 在多少的可见区域进行加载,默认是1
+
+#中文链接转拼音
+permalink_pinyin:
+  enable: false
+  separator: '-' # default: '-'
+
+#提交url
+hexo_submit_urls_to_search_engine:
+  count: 333 #提交最新的多少个链接
+  # 提交修改时间在 n 秒内的链接，单位秒。例如：
+  # 有两个文件 a.txt 和 b.txt，分别对应 https://yoursite.com/a.txt 和 https://yoursite.com/b.txt
+  # 其更新时间距当前分别为 800s 和 1000s（period 字段设为 900）
+  # 则 https://yoursite.com/a.txt 会被提交，https://yoursite.com/b.txt 不会
+  period: 900
+  # 提交链接的条件，可选值：count | period。不同取值的含义如下：
+  # count ：应用上述的 count  配置项
+  # period：应用上述的 period 配置项
+  submit_condition: count
+  # 是否向 Google 提交，可选值：1 | 0（0：否；1：是）
+  google: 0
+  # 是否向 Bing 提交，可选值：1 | 0（0：否；1：是）
+  bing: 1
+  # 是否向 Baidu 提交，可选值：1 | 0（0：否；1：是）
+  baidu: 1
+  # 文本文档的地址，要推送的链接会保存在此文本文档里
+  txt_path: submit_urls.txt
+  # 在百度站长平台中注册的域名
+  baidu_host: https://blog.happyking.top/
+  # 百度自动推送 API 的 token（获取方式见插件文档：https://cjh0613.com/20200603HexoSubmitUrlsToSearchEngine.html）
+  baidu_token: http://data.zz.baidu.com/urls?site=https://blog.happyking.top&token=gYVCUwZ8LJSL0Oe2
+  # 在必应站长平台中注册的域名
+  bing_host: https://blog.happyking.top/
+  # 必应自动推送 API 的 token（获取方式见插件文档：https://cjh0613.com/20200603HexoSubmitUrlsToSearchEngine.html）
+  bing_token: e7c52b7eebaa42ab8769cbb267bdacf7
+  # 在谷歌站长平台中注册的域名
+  google_host: https://yoursite.com/
+  # 存放 google key 的 json 文件，放于网站根目录
+  google_key_file: google_key.json
+
+swpp:
+  enable: true
+  sw:
+    # 是否使用自定义的 sw，为 true 时不自动生成 sw.js，但是仍然会插入注册 sw 的代码
+    # 注意：不支持自定义 sw.js 的路径及文件名，sw.js 必须放置在 source_dir 中
+    custom: false
+    # 注册 sw 发生错误时触发的 js 代码，如果包含多个指令需使用花括号（{}）包裹
+    # 注意：SW 注册代码将直接内嵌在 HTML 首部，该代码执行时其它 JS 不一定完成了加载
+    onerror: "{console.error('注册 sw 时发生错误，很可能是由于您的浏览器不支持 sw')}"
+    # 注册 sw 成功后触发的 js 代码，如果包含多个指令需使用花括号（{}）包裹
+    # 注意：SW 注册代码将直接内嵌在 HTML 首部，该代码执行时其它 JS 不一定完成了加载
+    onsuccess: "location.reload()"
+    # 缓存库名称，缺省为 kmarBlogCache
+    # 发布网站后请勿修改该配置项，无特殊需求建议保持缺省
+    cacheName: 'HKBlogCache'
+    # 逃生门，详情见：https://kmar.top/posts/73014407/#cdf686f0
+    escape: 0
+    # 是否启用 CDN 竞速，详情见：https://kmar.top/posts/73014407/#4acf3000
+    # 该项与 spareUrl 冲突，若两项同时开启，则该项生效
+    cdnRacing: false
+    # 是否启用备用 URL，详情见：https://kmar.top/posts/73014407/#62889c40
+    # 该项与 cdnRacing 冲突，若两项同时开启，则 cdnRacing 生效
+    spareUrl: false
+    # 是否启用调试，启用后会在 sw 中插入一些辅助调试的代码，不建议开启
+    debug: false
+  dom:
+    # 是否使用自定义的 DOM 端 JS，为 true 时不会自动生成 sw-dom.js，且不会插入引入 JS 的代码
+    # 当值为 true 时本分类下其余设置项均无效
+    custom: false
+    # 当更新成功（更新完毕自动刷新页面）后触发，包含多个指令不需要用花括号包裹
+    onsuccess: "console.log('happyking提醒您-sw更新成功')"
+  json:
+    # 最大 HTML 数量，超过这个数量后会直接清除所有 HTML 缓存
+    maxHtml: 30
+    # update.json 的最大字符数量
+    # 超过后会移除旧的版本号，直到满足要求，如果只有全部清空才能满足就会直接刷新所有缓存
+    charLimit: 1024
+    # 文件缓存匹配采取精确模式
+    # 关闭时更新缓存时仅匹配文件名称，如 https://kmar.top/simple/a/index.html 仅匹配 /a/index.html
+    # 开启后更新缓存时将会匹配完整名称，如 https://kmar.top/simple/a/index.html 将匹配 /simple/a/index.html
+    # 两种方式各有优劣，开启后会增加 update.json 的空间占用，但会提升精确度
+    # 如果网站内没有多级目录结构，就可以放心大胆的关闭了
+    # key 值为文件拓展名，default 用于指代所有未列出的拓展名以及没有拓展名的文件
+    precisionMode:
+      default: false
+    # 是否合并指定项目
+    # 例如当 tags 为 true 时（假设标签目录为 https://kmar.top/tags/...）
+    # 如果标签页存在更新，则直接匹配 https://kmar.top/tags/ 目录下的所有文件
+    # 推荐将此项开启
+    merge:
+      tags: true
+      archives: true
+      categories: true
+      index: true
+      # 自定义
+      custom:
+        # 这里填写目录名称列表（不带两边的斜杠）
+        # 如果按下面这样写，当 `//[domain]/bilibili/` 下的任意文件更新，都会合并为同一个更新项目
+        #- 'bilibili'
+    # 忽略哪些文件，正则表达式，不写两边的斜杠，不区分大小写
+    # 注：匹配的时候不附带域名，只有 pathname
+    exclude:
+      # 这里写正则表达式，格式如下：
+      - sw\.js$
+  # 外部文件更新监听
+  # 开启后会捕获外部文件的更新，具体原理见：https://kmar.top/posts/73014407/#771b3e00
+  external:
+    enable: false
+    # 自定义拉取网络文件时的超时时间，缺省 1500
+    timeout: 1500
+    # 见 https://kmar.top/posts/73014407/#771b3e00
+    js:
+      - head: '这里写 head 内容'
+        tail: '这里写 tail 内容（必须有 tail）'
+    # 某些外链只要 URL 不变其内容就一定不会变
+    # 可以通过正则表达式排除这些外链的文件内容监控，加快构建速度
+    # 下面是几个常用的 CDN 的匹配
+    # 正则表达式不用写两边的斜杠，区分大小写
+    skip:
+      - ^(https?:\/\/|\/\/)(cdn|fastly)\.jsdelivr\.net\/npm\/.*@\d+\.\d+\.\d+\/
+      - ^(https?:\/\/|\/\/)cdn\d\.tianli0\.top\/.*@\d+\.\d+\.\d+\/
+      - ^(https?:\/\/|\/\/)cdn\.staticfile\.org\/.*\/\d+\.\d+\.\d+\/
+      - ^(https?:\/\/|\/\/)lf\d+-cdn-tos\.bytecdntp\.com\/.*\/\d+\.\d+\.\d+\/
+      - ^(https?:\/\/|\/\/)npm\.elemecdn\.com\/.*@\d+\.\d+\.\d+\/
+    # 在构建过程中替换部分链接，该替换结果不会影响文件内容
+    # 该设置项是为了应对构建服务器在国外，但是网站内部分缓存资源无法在国外访问导致拉取时 timeout 的问题
+    # 填写格式和替换规则见 https://kmar.top/posts/73014407/#9dde3600
+    replace:
+      - source:
+          - 'rules0'
+          - 'rules1'
+        dist: 'url'
+  # 对 Hexo 中的变量进行排序
+  # 默认插件对 posts、tags、categories、pages 四个变量进行排序
+  # 排序规则为优先按照字符串长度排序，若长度一致按照字典序排序
+  sort:
+    # 格式为 `name: value`
+    # value 的可能值为：字符串、非负整数、false
+    # 假定 Array<obj> 为要被排序的数据
+    # 当 value 为字符串和非负整数时，插件会以 `obj[value]` 的格式读取关键字
+    # 当 value 为 false 时，插件会直接以 `obj` 为关键字
+    # 注意：关键字必须为含有 length 属性且支持 < 操作符的类型
+    # 插件内置的 posts 规则如果用上面的格式写应该为：
+    # posts: 'title'
+    # 插件支持使用配置项覆盖插件内置规则
+    # 下面是一个示例
+    keywords: false
+

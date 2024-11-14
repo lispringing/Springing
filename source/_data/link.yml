@@ -1,0 +1,129 @@
+- class_name: 博主
+  class_desc: 备战高考中,每晚10点回评论
+  link_list:
+    - name: 欢乐小王
+      link: https://blog.happyking.top/
+      avatar: https://blog.happyking.top/img/avatar.webp
+      siteshot: https://bu.dusays.com/2023/07/18/64b5e7deae6e8.webp
+      descr: 聚散无常,别来无恙.
+- class_name: 好友位
+  class_desc: 小王の好友(ps网站已经挂掉了)
+  link_list:
+    - name: Mars
+      link: http://wangyuning.site/
+      avatar: https://bu.dusays.com/2023/07/22/64bbe16079101.webp
+      siteshot: https://bu.dusays.com/2023/07/22/64bbe2027e1e5.webp
+      descr: 我们永不独行
+- class_name: 特别鸣谢
+  class_desc: 博客搭建过程中的技术支持
+  link_list:
+    - name: DORAKIKA
+      link: https://blog.dorakika.cn
+      avatar: https://bu.dusays.com/2023/07/19/64b7612bbf163.webp
+      siteshot: https://bu.dusays.com/2023/07/19/64b76142c5247.webp
+      descr: 热爱漫无边际，生活自有分寸
+    - name: 小冰博客
+      link: https://zfe.space/
+      avatar: https://bu.dusays.com/2023/07/19/64b7ea45a1fdb.webp
+      siteshot: https://bu.dusays.com/2023/07/20/64b91bd182025.webp
+      descr: 做个有梦想的人！
+    - name: 张洪Heo
+      link: https://blog.zhheo.com/
+      avatar: https://bu.dusays.com/2023/07/20/64b91bbe5ce99.webp
+      siteshot: https://bu.dusays.com/2023/07/20/64b91ba8bd779.webp
+      descr: 分享设计与科技生活
+    - name: Akilar
+      link: https://akilar.top
+      avatar: https://bu.dusays.com/2023/07/20/64b91be5f054d.webp
+      siteshot: https://bu.dusays.com/2023/07/20/64b91bf549691.webp
+      descr: 欢迎光临糖果屋
+- class_name: 友情链接
+  class_desc: 聚散无常,别来无恙.
+  link_list:
+    - name: 猫羽のブログす
+      link: https://www.maoyv.cn/
+      avatar: https://bu.dusays.com/2023/08/23/64e5bc5807fcb.jpg
+      descr: 欢迎来到猫羽のブログす~分享技术，享受生活，体会成长，感受乐趣！
+    - name: 免费clash节点
+      link: https://clashfree.eu.org
+      avatar: https://bu.dusays.com/2023/07/20/64b91c10d1357.jpg
+      descr: ssr/v2ray/clash免费节点分享
+    - name: 金鳞星溅的个人博客
+      link: https://jinlinxingjian.top/
+      avatar: https://bu.dusays.com/2023/07/22/64bbe25ac6dfe.webp
+      descr: Hello world 交个朋友吧
+    - name: LyShark - 孤风洗剑
+      link: https://www.lyshark.com
+      avatar: https://bu.dusays.com/2023/07/22/64bbe24402fab.webp
+      descr: 道，可道，非常道；名，可名，非常名。—— 老子《道德经》
+    - name: wsbのblog
+      link: https://wsbblog.cn
+      avatar: https://bu.dusays.com/2023/07/22/64bbe2e36065a.webp
+      siteshot: https://bu.dusays.com/2023/07/22/64bbe2f397724.webp
+      descr: 己所不欲，勿施于人
+    - name: 山岳库博
+      link: https://kmar.top/
+      avatar: https://bu.dusays.com/2023/07/25/64bf9d9825575.webp
+      siteshot: https://bu.dusays.com/2023/07/25/64bf9da8f226f.webp
+      descr: 开发学习启发性二刺螈
+    - name: Shiro's Shelf
+      link: https://snow.js.org/
+      avatar: https://bu.dusays.com/2023/08/10/64d4a0842439e.webp
+      siteshot: https://bu.dusays.com/2023/08/10/64d4a095f1ce2.webp
+      descr: 辉星皓夜苍千顷，此宵风醉月舞萤
+    - name: SeaYJ’s Blog
+      link: https://seayj.cn/
+      avatar: https://bu.dusays.com/2023/08/10/64d4a0a70dde6.webp
+      siteshot: https://bu.dusays.com/2023/08/10/64d4a0b4a4404.webp
+      descr: 她站在那里，就像一个小小的永恒！
+    - name: booop
+      link: https://booop.net/
+      avatar: https://bu.dusays.com/2023/08/10/64d4a0c43c730.webp
+      siteshot: https://bu.dusays.com/2023/08/10/64d4a0d1e3f66.webp
+      descr: 一个隐匿的私人小站
+    - name: 邓邓的流水账
+      link: https://xhhdd.cc/
+      avatar: https://bu.dusays.com/2023/08/10/64d4a0f1680ed.webp
+      siteshot: https://bu.dusays.com/2023/08/10/64d4a0fd45834.webp
+      descr: 邓邓的个人小站｜记录喜欢折腾的日常
+    - name: Colsrch
+      link: https://colsrch.cn
+      avatar: https://bu.dusays.com/2023/08/10/64d4a109ecc3c.webp
+      siteshot: https://bu.dusays.com/2023/08/10/64d4a1172a598.webp
+      descr: 愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。
+    - name: 小孙同学
+      link: https://blog.sunguoqi.com
+      avatar: https://bu.dusays.com/2023/08/10/64d4a1258d1f0.webp
+      siteshot: https://bu.dusays.com/2023/08/10/64d4a1315e696.webp
+      descr: 一个理性的浪漫主义者！
+    - name: Eurkon
+      link: https://blog.eurkon.com  
+      avatar: https://bu.dusays.com/2023/08/10/64d4a15dc65d9.webp
+      siteshot: https://bu.dusays.com/2023/08/10/64d4a16a12b9b.webp
+      descr: 不只是代码的搬运工
+    - name: Yuexin’s Blog
+      link: https://wyxogo.top/
+      avatar: https://bu.dusays.com/2023/08/10/64d4a1843de02.webp
+      descr: KEEP WALKING
+    - name: Tianli
+      link: https://tianli-blog.club
+      avatar: https://bu.dusays.com/2023/08/10/64d4a14d0dc2c.webp
+      descr: 惟其不可能，所以才相信。
+- class_name: 失联友链
+  class_desc: 期待你们的回来
+  link_list:
+    - name: Aohui
+      link: https://aohuiliu.fun
+      avatar: https://bu.dusays.com/2023/08/10/64d4a177a9dae.webp
+      siteshot: https://bu.dusays.com/2023/07/14/64b14669d264f.webp
+      descr: 记录学习，记录生活。
+    - name: 小曹同学
+      link: https://cgq.suduhulian.top/
+      avatar: https://bu.dusays.com/2023/08/11/64d646d4c83d7.webp
+      siteshot: https://bu.dusays.com/2023/07/14/64b14669d264f.webp
+      descr: 一个学Py的人
+    - name: 葱苓博客
+      link: https://www.ciraos.top
+      avatar: https://bu.dusays.com/2023/08/11/64d646e167fbd.webp
+      siteshot: https://bu.dusays.com/2023/07/14/64b14669d264f.webp
+      descr: Dare && Do 

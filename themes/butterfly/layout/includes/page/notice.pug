@@ -1,0 +1,19 @@
+#article-container
+  if top_img === false && page.tip
+    h1.page-title.page-title-has= page.title
+    .page-title-tip!= page.tip
+  else 
+    h1.page-title= page.title
+    
+  != page.content
+
+  .timeline(class="notice")
+    if site.data.notice
+      each i in site.data.notice
+        .timenode
+          .meta
+            p
+            p=i.date
+            p
+          .body
+            p=i.msg

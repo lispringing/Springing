@@ -1,0 +1,27 @@
+User-agent: *
+Allow:https://blog.happyking.top
+Allow:https://blog.happyking.top/archives
+Allow:https://blog.happyking.top/tags
+Allow:https://blog.happyking.top/categories
+Allow:https://blog.happyking.top/comments
+Allow:https://blog.happyking.top/link
+Allow:https://blog.happyking.top/p/89789453.html
+Allow:https://blog.happyking.top/p/60682.html
+Allow:https://blog.happyking.top/p/20221003.html
+Allow:https://blog.happyking.top/p/54654645.html
+Allow:https://blog.happyking.top/p/567845.html
+Allow:https://blog.happyking.top/p/5657897.html
+Allow:https://blog.happyking.top/p/5655313787365.html
+Allow:https://blog.happyking.top/p/56553164679456.html
+Allow:https://blog.happyking.top/p/56557546348.html
+Allow:https://blog.happyking.top/p/8945645634564.html
+Allow:https://blog.happyking.top/p/879864.html
+Allow:https://blog.happyking.top/p/565768454564.html
+Allow:https://blog.happyking.top/p/676764.html
+Allow:https://blog.happyking.top/p/20221127.html
+Allow:https://blog.happyking.top/p/20221128.html
+Allow:https://blog.happyking.top/p/110.html
+Disallow:https://blog.happyking.top/music
+Disallow:https://blog.happyking.top/gallery
+Disallow:https://blog.happyking.top/about
+Disallow:https://blog.happyking.top/more

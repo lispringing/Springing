@@ -1,0 +1,890 @@
+#导航目录模块
+menu: #菜单
+   博客: /
+   文库||:
+     文章归档: /archives/ || iconfont icon-guidangrenwu
+     查找标签: /tags/ || iconfont icon-biaoqian
+     文章分类: /categories/ || iconfont icon-fenlei
+   发现||:
+     胡思乱想: /bb/ ||
+     小王音乐: https://music.happyking.top || iconfont icon-yinle
+     时光相册: /gallery/ || iconfont icon-tupian
+   本站||:
+     关于博主: /about/ || iconfont icon-guanyu
+     留言信箱: /comments/ || iconfont icon-liuyanban-05
+     友情链接: /link/ || iconfont icon-lianjie
+
+
+#文章代码块设置
+highlight_theme: mac #  darker / pale night / light / ocean / mac / mac light / false
+highlight_copy: true #代码复制功能
+highlight_lang: true #显示代码语言
+highlight_shrink: false # 代码框不展开
+highlight_height_limit: false # unit: px
+code_word_wrap: false
+
+#是否允许复制
+copy:
+  enable: true
+  copyright: #复制的内容是否加版权信息
+    enable: false
+    limit_count: 50
+
+#个人简介下方的社交图标配置
+social:
+   iconfont icon-weixin1: weixin://contacts/profile/w2638526782 || 我的微信
+   iconfont icon-youjian: mailto:2638526782@qq.com || 邮件
+   iconfont icon-zhihu-square-fill: https://www.zhihu.com/people/gui-hua-ju-zhu || 我的知乎首页
+   iconfont icon-icon_bilibili-square: https://space.bilibili.com/433911318?spm_id_from=333.337.0.0 || 我的bilibili主页
+   iconfont icon-QQ1: http://wpa.qq.com/msgrd?v=3&uin=2638526782&site=qq&menu=yes || 我的QQ
+   iconfont icon-netease-fill-square: https://music.163.com/#/user/home?id=2052321878 ||我的网易云音乐
+
+#基于algolia的搜索模块
+algolia_search:
+  enable: true
+  hits:
+    per_page: 6
+
+#本地搜索（和gulp压缩冲突,不开启)
+local_search:
+  enable: false
+
+#mathiax数学公式
+mathjax:
+  enable: false
+  per_page: true
+
+#KaTeX数学公式
+katex:
+  enable: false
+  per_page: false
+  hide_scrollbar: true
+
+#网站的图标（艹了，不想改了）
+favicon: /img/favicon.webp
+
+#个人头像
+avatar:
+  img: /img/avatar.webp
+  effect: false #头像转动
+
+#头图取消显示
+disable_top_img: false
+
+#主页封面
+index_img: 
+
+#当未在md文件表头配置时，显示以下图片
+default_top_img: 
+
+#归档（时光机）界面的图片
+archive_img: 
+
+#tag界面的图片
+tag_img: 
+
+# The banner image of tag page
+# format:
+#  - tag name: xxxxx
+tag_per_img: #/img/tagpage.jpg
+
+# If the banner of category page not setting, it will show the top_img
+# note: category page, not categories page (子分類頁面的 top_img)
+category_img:
+
+# The banner image of category page
+# format:
+#  - category name: xxxxx
+category_per_img:
+
+cover:
+  #是否显示文章封面
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  position: both #文章封面显示的位置 both,right,left
+  #没设置封面时，默认给文章加入以下封面
+  default_cover:
+     - https://bu.dusays.com/2023/07/14/64b145f64a0df.webp
+     - https://bu.dusays.com/2023/07/14/64b146156760b.webp
+
+#替换无法显示的图片
+error_img:
+  flink: https://bu.dusays.com/2023/07/14/64b14669d264f.webp
+  post_page: https://bu.dusays.com/2023/07/14/64b14669d264f.webp
+
+#404页面
+error_404:
+  enable: true
+  subtitle: '抱歉,这个页面或者文件可能无法访问' #自定义内容
+  background: https://bu.dusays.com/2023/07/14/64b14669d264f.webp
+post_meta:
+  page: #主页配置
+    date_type: both #主页文章日期是创建日或者更新日或都显示
+    date_format: date # date/relative 顯示日期還是相對日期
+    categories: true #是否显示分类
+    tags: true # true or false 主頁是否顯示標籤
+    label: true #是否显示描述性文字
+  post:
+    date_type: both # created or updated or both 文章頁日期是創建日或者更新日或都顯示
+    date_format: date # date/relative 顯示日期還是相對日期
+    categories: true #显示分类
+    tags: true #显示标签
+    label: true #显示描述性文字
+
+#字数统计（装了插件也报错，不知道为什么）
+wordcount:
+  enable: false
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true 
+
+# 主页的文章描述配置
+# 1: description
+# 2: both (if the description exists, it will show description, or show the auto_excerpt)
+# 3: auto_excerpt (default)
+# false: do not show the article introduction
+index_post_content:
+  method: 2
+  length: 333 #节选文章的前333个字
+
+#锚点.动态url变化
+anchor: false
+
+#文章目录
+toc:
+  post: true
+  page: false
+  number: false
+  expand: false
+  style_simple: false # for post
+
+#文章转载协议
+post_copyright: 
+  enable: true
+  decode: true
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+#打赏
+reward:
+  enable: true
+  coinAudio: /fonts/coin.mp3
+  QR_code:
+     - img: https://bu.dusays.com/2023/07/14/64b14639c17ce.webp
+       link: 
+       text: 微信
+
+#文章在线编辑(好像没用,不用开启)
+post_edit:
+  enable: false
+  # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
+  # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
+  url:
+
+# Related Articles
+related_post:
+  enable: true
+  limit: 6 # Number of posts displayed
+  date_type: created # or created or updated 文章日期顯示創建日或者更新日
+
+# figcaption (圖片描述文字)
+photofigcaption: false
+
+# post_pagination (分頁)
+# value: 1 || 2 || false
+# 1: The 'next post' will link to old post
+# 2: The 'next post' will link to new post
+# false: disable pagination
+post_pagination: 1
+
+#太久的文章提示
+noticeOutdate:
+  enable: false
+  style: flat # 样式:simple/flat
+  limit_day: 100 #多少天
+  position: top #显示的位置:top/bottom
+  message_prev: 已经有
+  message_next: 天没有更新了,其中的部分内容可能已经过时
+
+# AddThis
+# https://www.addthis.com/
+addThis:
+  enable: false
+  pubid:
+
+#分享js模块
+sharejs:
+  enable: true
+  sites: wechat,qq
+
+# AddToAny
+# https://www.addtoany.com/
+addtoany:
+  enable: false
+  item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
+
+#评论系统
+comments:
+  use: Twikoo #可以选择双评论系统（最多填写两个）
+  text: true # Display the comment name next to the button
+  # lazyload: The comment system will be load when comment element enters the browser's viewport.
+  lazyload: true # 懒加载，开启后评论统计就不要打开了,因为你懒加载是不读取评论的
+  count: false # Display comment count in post's top_img
+  card_post_count: false #在主页的文章概览中展示评论数
+
+# disqus评论系统
+disqus:
+  shortname:
+  apikey: # For newest comments widget
+
+# DisqusJS评论系统
+disqusjs:
+  shortname:
+  apikey:
+  option:
+
+#來必力评论系统
+livere:
+  uid: MTAyMC81NTg0Ny8zMjMxMQ==
+
+# gitalk评论系统
+gitalk:
+  client_id:
+  client_secret:
+  repo:
+  owner:
+  admin:
+  option:
+
+# valine评论系统
+valine:
+  appId: e8v471L9oWlr5qxqERDQyBy0-gzGzoHsz #
+  appKey: OJvORHAbj8YC7NnUEfDde5i7 # 妈的
+  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
+  serverURLs: #好像是国际版才有的东西
+  bg: #这里可以设置评论背景
+  visitor: false
+  option:
+
+# waline评论系统
+waline:
+  serverURL: # Waline server address url
+  bg: # waline background
+  visitor: false
+  option:
+
+# utterances
+# https://utteranc.es/
+utterances:
+  repo:
+  # Issue Mapping: pathname/url/title/og:title
+  issue_term: pathname
+  # Theme: github-light/github-dark/github-dark-orange/icy-dark/dark-blue/photon-dark
+  light_theme: github-light
+  dark_theme: photon-dark
+
+# Facebook Comments Plugin
+facebook_comments:
+  app_id:
+  user_id: # optional
+  pageSize: 10 # The number of comments to show
+  order_by: social # social/time/reverse_time
+  lang: en_US # Language en_US/zh_CN/zh_TW and so on
+
+# Twikoo
+twikoo:
+  envId: https://twikoo.happyking.top/
+  region: 
+  visitor: true
+  option:
+
+# Giscus
+# https://giscus.app/
+giscus:
+  repo:
+  repo_id:
+  category_id:
+  theme:
+    light: light
+    dark: dark
+  option:
+
+# 在线聊天系统
+# --------------------------------------
+
+# Chat Button [recommend]
+# It will create a button in the bottom right corner of website, and hide the origin button
+chat_btn: false
+
+# The origin chat button is displayed when scrolling up, and the button is hidden when scrolling down
+chat_hide_show: false
+
+# chatra
+# https://chatra.io/
+chatra:
+  enable: false
+  id:
+
+# tidio（在线聊天系统）
+tidio:
+  enable: false
+  public_key:
+
+# daovoice（在线聊天系统2）
+daovoice:
+  enable: false
+  app_id:
+
+# gitter
+# https://gitter.im/
+gitter:
+  enable: false
+  room:
+
+# crisp
+# https://crisp.chat/en/
+crisp:
+  enable: false
+  website_id:
+
+#脚页设置,在footer.pug修改就行了
+footer:
+  owner:
+    enable: false
+    since: 2022
+  custom_text: #这里不用填写了,在footer.pug修改就行了
+  copyright: false #显示基于hexo…………
+
+# Baidu统计
+baidu_analytics:
+
+#谷歌统计分析
+google_analytics:
+
+# CNZZ统计分析
+cnzz_analytics:
+
+# Cloudflare统计分析
+cloudflare_analytics:
+
+# Microsoft Clarity统计分析
+microsoft_clarity:
+
+#谷歌广告
+google_adsense:
+  enable: false
+  auto_ads: true
+  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
+  client:
+  enable_page_level_ads: true
+
+# Insert ads manually (手動插入廣告)
+# ad:
+#   index:
+#   aside:
+#   post:
+
+#站点验证部分（提交到搜索引擎）
+#site_verification:
+   #- name: google-site-verification
+    # content: 
+   #- name: baidu-site-verification
+    # content:
+
+
+# 主题色
+theme_color:
+  enable: true
+  main: "#F44E5A" # 粉红色
+  paginator: "#F44E5A" # 分页器
+  button_hover: "#FF7242" # 按钮悬停
+  text_selection: "#F44E5A" # 文本选择
+  link_color: "#99a9bf"
+  meta_color: "#858585"
+  hr_color: "#A4D8FA"
+  code_foreground: "#F47466" # 代码前景
+  code_background: "rgba(27, 31, 35, .05)" # 代码背景
+  toc_color: "#F44E5A" # TOC目录颜色
+  blockquote_padding_color: "#F44E5A" # 块引用填充颜色
+  blockquote_background_color: "#F44E5A" # 块引用背景颜色
+
+#主页大标题距离顶部高度
+index_site_info_top:
+
+#主页背景高度
+index_top_img_height: 
+
+# The user interface setting of category and tag page (category和tag頁的UI設置)
+# index - same as Homepage UI (index 值代表 UI將與首頁的UI一樣)
+# default - same as archives UI 默認跟archives頁面UI一樣
+category_ui: # 留空或 index
+tag_ui: # 留空或 index
+
+#网站背景，可以设置图片或者颜色（其实没有用,css覆盖了）
+background: url(https://bu.dusays.com/2023/07/14/64b1469b71e1a.webp)
+
+#脚页的背景是否开启(现在也废了,footer自己写了)
+footer_bg: false
+
+#右下角按钮的高度
+rightside-bottom:
+
+#开启网页进入效果
+enter_transitions: true
+
+#背景特效
+#靜止彩带背景
+canvas_ribbon:
+  enable: false
+  size: 150
+  alpha: 0.6
+  zIndex: -1
+  click_to_change: false
+  mobile: false
+
+#动态背景彩带
+canvas_fluttering_ribbon:
+  enable: false
+  mobile: false
+
+# 背景粒子插件
+# https://github.com/hustcc/canvas-nest.js
+canvas_nest:
+  enable: false
+  color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  opacity: 0.7 # the opacity of line (0~1), default: 0.5.
+  zIndex: -1 # z-index property of the background, default: -1.
+  count: 99 # the number of lines, default: 99.
+  mobile: false
+
+#打字效果(键盘打字的效果效果）
+activate_power_mode:
+  enable: true
+  colorful: true #冒光特效
+  shake: false #抖动特效
+  mobile: false #手机端是否开启
+
+#鼠标点击效果（火焰）
+fireworks:
+  enable: false
+  zIndex: 9999 # -1 or 9999
+  mobile: false #手机端是否开启
+
+#鼠标点击效果：爱心
+click_heart:
+  enable: false
+  mobile: false
+
+#鼠标点击出现文字效果
+ClickShowText:
+  enable: false
+  text:
+     - 欢乐小王
+     - happyking
+     - 欢迎光临
+     - 曹抽抽
+  fontSize: 20px
+  random: true
+  mobile: false
+
+#进入网站的默认显示模式
+display_mode: light #light或者dark
+
+# 美化页面显示
+beautify:
+  enable: true
+  field: post # site表示只在文章页生效/post表示在全站生效
+  title-prefix-icon: '\f0c1'
+  title-prefix-icon-color: "#F47466"
+
+#网站字体设置
+font: 
+  global-font-size: 
+  code-font-size:
+  font-family:
+  code-font-family:
+
+# 网站名字字体配置
+blog_title_font: 
+  font_link: 
+  font-family: 
+
+#水平分割线(就是默认的那个剪刀)
+hr_icon:
+  enable: true
+  icon:  #可以用阿里巴巴矢量图标库
+  icon-top:
+
+#主页副标题设置
+subtitle:
+  enable: true
+  effect: true #打字效果是否开启
+  loop: true #是否循环打字
+  # source 調用第三方服務
+  # source: false 關閉調用
+  # source: 1  調用一言網的一句話（簡體） https://hitokoto.cn/
+  # source: 2  調用一句網（簡體） http://yijuzhan.com/
+  # source: 3  調用今日詩詞（簡體） https://www.jinrishici.com/
+  # subtitle 會先顯示 source , 再顯示 sub 的內容
+  source: 1
+  # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
+  sub: 
+    - 聚散無常，別來無恙.
+    - Gathering and dispersing are impermanent. I'll be all right.
+
+#加载动画
+preloader: true
+
+#侧边栏
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true #手机是否显示
+  position: right #位置
+  card_author: #作者介绍卡片
+    enable: true
+    description: 聚散無常，别来无恙.
+    button:
+      enable: false
+      icon: iconfont icon-github
+      text: 我的Github
+      link: https://github.com/XINGMOUREN
+  card_announcement: #公告栏
+    enable: true
+    content: <p>博主备战高考中,博客先暂时不搞了</p><p>本站会默认缓存css,js以及部分页面文件用于优化访问速度,请悉知,如果遇到问题可以尝试Ctrl+F5进行缓存强制刷新</p><p>右键菜单中>主题切换选项可以切换主题,按Ctrl+右键可以打开原生菜单</p><p>建议使用主域名blog.happyking.top访问本站,备用线路无法启用sw可能会降低浏览体验</p>
+    #转圈的小人<div class="twopeople"><div class="container" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width:200px;max-height:200px;touch-action:none;width:640px;height:640px;"></canvas></div><script src="https://cdn1.tianli0.top/gh/Justlovesmile/CDN/js/twopeople1.js"></script><script src="https://cdn1.tianli0.top/gh/Justlovesmile/CDN/js/zdog.dist.js"></script><script id="rendered-js" src="https://cdn1.tianli0.top/gh/Justlovesmile/CDN/js/twopeople.js"></script><style>.twopeople{margin:0;align-items:center;justify-content:center;text-align:center;}canvas{display:block;margin:0 auto;cursor:move;}</style></div> 
+  card_recent_post: #最近文章更新
+    enable: true
+    limit: 3 #显示多少个（设置为0显示全部）
+    sort: date #是依据日期还是更新日期 date or updated
+    sort_order: #不知道的就别瞎写
+  card_categories: #文章分类
+    enable: true
+    limit: 6 # if set 0 will show all
+    expand: none # none/true/false
+    sort_order: #不知道的就别瞎写
+  card_tags:
+    enable: true
+    limit: 15 # if set 0 will show all
+    color: true
+    sort_order: #不知道的就别瞎写
+  card_archives: #时光机
+    enable: true
+    type: monthly # yearly or monthly
+    format: MMMM YYYY # eg: YYYY年MM月
+    order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
+    limit: 3 # if set 0 will show all
+    sort_order: #不知道的就别瞎写
+  card_webinfo: #网站信息
+    enable: true
+    post_count: false
+    last_push_date: true
+    sort_order: #不知道的就别瞎写
+
+#访问人数(现在用的杜老师的)
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
+#网站运行时间
+runtimeshow:
+  enable: true
+  publish_date: 2022/3/15
+
+#最新评论
+newest_comments:
+  enable: true
+  sort_order: #不知道的就别瞎写
+  limit: 3
+  storage: 10 # unit: mins, save data to localStorage
+  avatar: true
+
+#翻译模块（没写语言配置文件就别打开）
+translate:
+  enable: true
+  default: 繁
+  defaultEncoding: 2
+  translateDelay: 0
+  msgToTraditionalChinese: '繁'
+  msgToSimplifiedChinese: '簡'
+
+#右下角按钮阅读模式
+readmode: true
+
+#明暗自动切换
+darkmode:
+  enable: true
+  # Toggle Button to switch dark/light mode
+  button: true
+  # Switch dark/light mode automatically (自動切換 dark mode和 light mode)
+  # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
+  # autoChangeMode: 2  下午6点到上午6点设置为黑暗模式
+  # autoChangeMode: false
+  autoChangeMode: 1
+
+# Don't modify the following settings unless you know how they work (非必要請不要修改 )
+# Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
+# Don't repeat 不要重複
+rightside_item_order:
+  enable: false
+  hide: # readmode,translate,darkmode,hideAside
+  show: # toc,chat,comment
+
+# 图片放大查看模式(下面这两个二选一)
+# medium-zoom
+medium_zoom: false
+
+# fancybox
+fancybox: true
+
+# mermaid
+mermaid:
+  enable: false
+  # built-in themes: default/forest/dark/neutral
+  theme:
+    light: default
+    dark: dark
+
+# Note (Bootstrap Callout)
+note:
+  # Note tag style values:
+  #  - simple    bs-callout old alert style. Default.
+  #  - modern    bs-callout new (v2-v3) alert style.
+  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
+  #  - disabled  disable all CSS styles import of note tag.
+  style: flat
+  icons: true
+  border_radius: 3
+  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
+  # Offset also applied to label tag variables. This option can work with disabled note tag.
+  light_bg_offset: 0
+
+
+# Pjax(这个是好东西)
+pjax:
+  enable: true
+  exclude:
+     - /gallery/gallery3/
+    # - xxxx
+
+# 引入aplayer的css和js文件(不要开启,不兼容sw)
+aplayerInject:
+  enable: false
+  per_page: true
+
+#提示弹窗
+snackbar:
+  enable: true
+  position: bottom-center #弹窗位置 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
+  bg_light: '#' # The background color of Toast Notification in light mode
+  bg_dark: '#' # The background color of Toast Notification in dark mode
+
+#预加载
+instantpage: true
+
+#盘古模块,
+pangu:
+  enable: false
+  field: site # site/post
+
+
+#图片懒加载
+lazyload:
+  enable: false
+  field: site # site/post
+  placeholder:
+  blur: false
+
+# PWA
+pwa:
+  enable: true
+  manifest: /manifest.json
+  theme_color: '#FF3842'
+  apple_touch_icon: /img/siteicon/apple-touch-icon.webp
+  favicon_32_32: /img/siteicon/favicon-32x32.webp
+  favicon_16_16: /img/siteicon/favicon-16x16.webp
+  mask_icon: /img/siteicon/safari-pinned-tab.svg
+
+# Open graph meta tags
+# https://developers.facebook.com/docs/sharing/webmasters/
+Open_Graph_meta: true
+
+# Add the vendor prefixes to ensure compatibility
+css_prefix: true
+
+#自定义css,js配置区域
+inject:
+  head:
+     - <script data-pjax async src="/js/ie.js"></script>  #老旧浏览器提示,浏览器判断
+     - <script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://blog.happyking.top/js/main/pace/pace.min.js"></script> #pjax优化
+     - <link rel="stylesheet" type="text/css" href="/css/font.css" > #字体等前置组件载入
+     - <link rel="stylesheet" type="text/css" tag="theme" href="/css/happyking/cao.css"> #主题的css
+     - <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'"> #swiper.css引入
+     - <link rel="stylesheet" type="text/css" href="/css/common.css" > #自定义引入css
+     - <link rel="stylesheet" media="defer" onload="this.media='all'" href="//at.alicdn.com/t/c/font_3294602_gip1xjnhg6.css"> #阿里巴巴图标库
+     - <link rel="stylesheet" type="text/css" media="defer" onload="this.media='all'" href="/css/categories.css"> #文章分类页面美化
+
+  bottom:
+     #- <script data-pjax src="/js/main/pace/pace.min.js" defer ></script> #pace加载条
+     - <script src="/js/jq.js"></script> #JQ库
+     - <script data-pjax defer async src="/js/custom.js" ></script> #自定义js
+     - <script defer src="/js/rightmenu.js"></script> #右键菜单
+     - <script async src="/random/random.js"></script> #随机文章
+     - <script data-pjax async src="/js/background.js"></script> #背景随机切换
+     - <div id="fps"></div> #挂载帧率检测
+     - <script src="/js/fps.js"></script> #帧率检测的js
+     - <script async src="/js/icon.js"></script> #网站十二生肖
+
+
+
+     - <script charset="UTF-8" id="LA_COLLECT" src="/js/51la.js"></script> #51la统计代码
+     - <script> LA.init({id:"JpEoD1xif1bRQ9fx",ck:"JpEoD1xif1bRQ9fx"})</script> #51la统计密钥
+
+
+
+
+# 友链样式，butterfly为默认样式，volantis为站点卡片样式.flexcard为弹性卡片样式
+flink_style: flexcard # butterfly | volantis | flexcard
+
+
+# CDN
+CDN:
+  # main
+  main_css:
+  main:
+  utils:
+
+
+  # 打赏按钮投币效果
+  coin_js: /js/coin.js
+  coin_css: /css/coin.css
+
+  # pjax
+  pjax:
+
+  # comments
+  gitalk:
+  gitalk_css:
+  blueimp_md5:
+  valine:
+  disqusjs:
+  disqusjs_css:
+  utterances:
+  twikoo: https://cdn1.tianli0.top/npm/twikoo@1.6.32/dist/twikoo.all.min.js #前端版本
+  waline:
+  giscus:
+
+  # share
+  addtoany:
+  sharejs:
+  sharejs_css:
+
+  # search
+  local_search:
+  algolia_js:
+  algolia_search_v4:
+  instantsearch_v4:
+
+  # math
+  mathjax:
+  katex:
+  katex_copytex:
+  katex_copytex_css:
+  mermaid:
+
+  # count
+  busuanzi: 
+
+  # background effect
+  canvas_ribbon:
+  canvas_fluttering_ribbon:
+  canvas_nest:
+
+  lazyload:
+  instantpage:
+  typed:
+  pangu:
+
+  # photo
+  fancybox_css_v4:
+  fancybox_v4:
+  medium_zoom:
+
+  # snackbar
+  snackbar_css:
+  snackbar:
+
+  # effect
+  activate_power_mode:
+  fireworks:
+  click_heart:
+  ClickShowText:
+
+  # fontawesome
+  fontawesomeV6:
+
+  # Conversion between Traditional and Simplified Chinese
+  translate:
+
+  # flickr-justified-gallery
+  flickr_justified_gallery_js:
+  flickr_justified_gallery_css:
+
+  # aplayer
+  aplayer_css:
+  aplayer_js:
+  meting_js:
+
+  # Prism.js
+  prismjs_js:
+  prismjs_lineNumber_js:
+  prismjs_autoloader:
+
+
+#文末银行卡片
+businesscard:
+  enable: false #总开关
+  QR_code: https://blog.happyking.top/img/avatar.webp #加群二维码
+  master: 欢乐小王 #群主ID
+  group: 2638526782 #QQ群号
+  created: HappyKing #建群时间
+  front: 欢迎大家加我好友! #卡面正面描述语
+  back1: 本站域名 #背面从上到下四行文字内容自定义
+  back2: <a href="https://blog.happyking.top/">https://blog.happyking.top/</a>
+  back3: 本网站由腾讯云提供cdn加速
+  back4: 大家有不明白的地方可以加我的QQ(见正面)
+
+
+#
+#                             _ooOoo_
+#                            o8888888o
+#                            88" . "88
+#                            (| -_- |)
+#                            O\  =  /O
+#                         ____/`---'\____
+#                       .'  \\|     |//  `.
+#                      /  \\|||  :  |||//  \
+#                     /  _||||| -:- |||||-  \
+#                     |   | \\\  -  /// |   |
+#                     | \_|  ''\---/''  |   |
+#                     \  .-\__  `-`  ___/-. /
+#                   ___`. .'  /--.--\  `. . __
+#                ."" '<  `.___\_<|>_/___.'  >'"".
+#               | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+#               \  \ `-.   \_ __\ /__ _/   .-` /  /
+#          ======`-.____`-.___\_____/___.-`____.-'======
+#                             `=---='
+#          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#                     佛祖保佑        永无BUG
+#            佛曰:
+#                   写字楼里写字间，写字间里程序员；
+#                   程序人员写程序，又拿程序换酒钱。
+#                   酒醒只在网上坐，酒醉还来网下眠；
+#                   酒醉酒醒日复日，网上网下年复年。
+#                   但愿老死电脑间，不愿鞠躬老板前；
+#                   奔驰宝马贵者趣，公交自行程序员。
+#                   别人笑我忒疯癫，我笑自己命太贱；
+#                   不见满街漂亮妹，哪个归得程序员？

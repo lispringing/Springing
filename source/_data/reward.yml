@@ -1,0 +1,32 @@
+- class_name: 赞赏
+  reward_list:
+    - name: 王不留行
+      amount: 200.00
+      datatime: 2023-04-17
+    - name: 还会遗憾吗
+      amount: 61.01
+      datatime: 2023-01-22
+    - name: 星辰万里
+      amount: 0.36
+      datatime: 2023-01-08
+    - name: 孤风
+      amount: 3.00
+      datatime: 2023-01-08
+    - name: 临
+      amount: 150.00
+      datatime: 2023-01-07
+    - name: 独步
+      amount: 0.01
+      datatime: 2023-01-07
+    - name: 遇见
+      amount: 2.33
+      datatime: 2022-11-08
+    - name: 我吃饭的时候不饿
+      amount: 0.66
+      datatime: 2022-09-20
+    - name: 王校成
+      amount: 5.00
+      datatime: 2022-10-27
+    - name: 王yu寜👑
+      amount: 4.00
+      datatime: 2022-10-07

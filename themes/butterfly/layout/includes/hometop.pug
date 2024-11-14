@@ -1,0 +1,33 @@
+if is_home()
+  #home_top
+    include bb.pug
+    .home_top_group
+      #homeTopGroup.homeTopGroup
+        #banner_group
+          #banners
+            include sticky.pug
+          .category_group
+            .category_item
+              a.category_button(href="/reward/",style="background:linear-gradient(to right,#364f6b,#3fc1c9)")
+                span.category_button_text 赞助小王
+                i.fas.fa-laptop-code
+            .category_item
+              a.category_button(href="/notice/",style="background:linear-gradient(to right,#6639a6,#3490de)")
+                span.category_button_text 更新日志
+                i.fas.fa-lightbulb
+            .category_item
+              a.category_button(href="/archives/",style="background:linear-gradient(to right,#f65,#ffbf37)")
+                span.category_button_text 全部文章
+                i.fas.fa-book
+        .top_post_group
+          if site.data.slider
+            each i in site.data.slider
+              .top_post_item
+                .post_cover
+                  a(href=url_for(i.link) title=i.title)
+                    img.post_bg.entered.loaded(src=url_for(i.cover))
+                    .post_cover_info
+                      p.post_cover_text= i.description
+
+                .post_info(onclick=`"pjax.loadUrl(`+url_for(i.link)+`,"_self")"`)
+                  a.article-title(href=url_for(i.link) title=i.title)= i.title
