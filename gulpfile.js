@@ -63,6 +63,7 @@ gulp.task('mini-font', (cb) => {
       minifyFont(text, cb);
     });
 });
+
 //替换(老版本图床用的,现在废弃了，如果再启用别忘了下面gulptask加上templates)
 //const replace = require('gulp-replace');
 //gulp.task('templates', async() => {
@@ -72,6 +73,9 @@ gulp.task('mini-font', (cb) => {
 //    .pipe(replace('.jpeg', '.jpeg!/format/webp'))
 //    .pipe(gulp.dest('public/')),  { overwrite: true };
 //});
+
+
+//替换(老版本图床用的,现在废弃了，如果再启用别忘了下面gulptask加上templates)
 // 运行gulp命令时依次执行以下任务
 gulp.task('default', gulp.parallel(
   'compress', 'minify-css', 'minify-html'

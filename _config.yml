@@ -1,15 +1,15 @@
 #hexo配置文件
-title: HappyKing # 网站的名称
-subtitle: '欢迎光临!' # 网站的副标题
+title: LittleSpringing # 网站的名称
+subtitle: '小春子' # 网站的副标题
 description: '一个分享生活趣事和各种知识的地方' # 网站的描述
-keywords: 欢乐小王,博客,信息技术,教程,IT,我的世界,minecraft,mcbbs,hacker,happykin,曹君宜,曹抽抽,hexo,node.js,小王 # 网站关键词语
-author: 欢乐小王 # 博主名称
+keywords: 小春子,Springing,博客,信息技术,教程,IT,我的世界,minecraft,mcbbs,hacker,happyking,node.js,happyking # 网站关键词语
+author: 小春子 # 博主名称
 language: zh-CN # 语言(这个无需改动,默认是中文)
 timezone: '' #时钟
+url: https://blog.springing.top/ #填写你的网址哦
+root: / # 根域(默认不用改动)
+theme: butterfly #主题
 
-# URL
-url: https://blog.happyking.top/ #填写你的网址哦
-root: /
 
 # 链接更短 hexo-abbrlink插件
 permalink: p/:abbrlink/
@@ -29,7 +29,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render: #指定不渲染的文件夹(注意这里默认是source目录的,还有要带“”)
-  #- 'upgrade-your-browser/**' #升级浏览器提示真事
+  #- 'upgrade-your-browser/**' #升级浏览器提示
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -95,8 +95,6 @@ include:
 exclude:
 ignore:
 
-theme: butterfly
-
 #上传配置
 deploy:
 - type: git
@@ -113,31 +111,6 @@ tencentcdn:
   type: 1 #刷新方式,1为只刷新变更资源,2为刷新网站下的全部缓存
   timer: 90000 #延时器,单位为毫秒,延时多长时间再执行刷新命令
 
-
-#GitHub统计
-# see https://akilar.top/posts/1f9c68c9/
-gitcalendar:
-  enable: true # 开关
-  priority: 1 #过滤器优先权
-  enable_page: all # 应用页面
-  # butterfly挂载容器
-  layout: # 挂载容器类型
-    type: id
-    name: recent-posts
-    index: 0
-  user: XINGMOUREN #git用户名
-  apiurl: 'https://calendar.happyking.top'
-  minheight:
-    pc: 280px #桌面端最小高度
-    mibile: 0px #移动端最小高度
-  color: "['rgb(145, 145, 145, 0.2)', '#c6ecc1', '#a0e2bb', '#81D8CF', '#70c5d3', '#60a2ce', '#507ac9', '#4356c5', '#423cc4', '#5b3abc', '#7138b6']" #马卡龙色调
-  # color: "['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f']" #浅紫色调
-  #color: "['#ebedf0', '#f0fff4', '#dcffe4', '#bef5cb', '#85e89d', '#34d058', '#28a745', '#22863a', '#176f2c', '#165c26', '#144620']" #翠绿色调
-  #color: "['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c']" #天青色调
-  container: .recent-post-item(style='width:100%;height:auto;padding:10px;') #父元素容器，需要使用pug语法
-  gitcalendar_css: /css/main/gitcalendar.css
-  gitcalendar_js: /js/main/gitcalendar.js
-
 #文章密码
 encrypt:
 	enable: true
@@ -152,6 +125,7 @@ aplayer:
 #选择性改动,可以选择默认的algolia或者本地搜索,如果选择了algolia的话需要把下面的也配置了
 plugins:
   - hexo-algoliasearch
+
 
 #搜索引擎
 # 如果搜索功能用的是这个,那就要配置这个
@@ -236,6 +210,10 @@ hexo_submit_urls_to_search_engine:
   google_host: https://yoursite.com/
   # 存放 google key 的 json 文件，放于网站根目录
   google_key_file: google_key.json
+
+
+
+
 
 swpp:
   enable: true

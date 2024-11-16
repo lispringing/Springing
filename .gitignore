@@ -1,10 +1,5 @@
-.DS_Store
-Thumbs.db
+node_modules/
+public/Thumbs.db
 db.json
 *.log
-node_modules/
-public/
-.deploy*/
-.deploy_git*/
 .idea
-themes/butterfly/.git
