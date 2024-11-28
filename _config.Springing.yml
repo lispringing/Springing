@@ -635,10 +635,10 @@ rightside_item_order:
 
 # 图片放大查看模式(下面这两个二选一)
 # medium-zoom
-medium_zoom: false
+medium_zoom: true
 
 # fancybox
-fancybox: true
+fancybox: false
 
 # mermaid
 mermaid:
