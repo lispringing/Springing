@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "aplayer": "^1.10.1",
-    "hexo": "^6.3.0",
+    "hexo": "^7.3.0",
     "hexo-algoliasearch": "^2.0.1",
     "hexo-blog-encrypt": "^3.1.6",
     "hexo-butterfly-tag-plugins-plus": "^1.0.18",
