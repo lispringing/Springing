@@ -1,10 +1,10 @@
-# 当有改动推送到master分支时，启动Action
+# 当有改动推送到main分支时，启动Action
 name: 自动部署
 
 on:
   push:
     branches:
-      - master #先不用github进行自动部署了,用的话改为master就ok
+      - main 
 
   release:
     types:
@@ -17,7 +17,7 @@ jobs:
     - name: 检查分支
       uses: actions/checkout@v2
       with:
-        ref: master #2020年10月后github新建仓库默认分支改为main，注意更改
+        ref: main #2020年10月后github新建仓库默认分支改为main，注意更改
 
     - name: 安装 Node.js
       uses: actions/setup-node@v1
