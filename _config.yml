@@ -115,8 +115,8 @@ deploy:
 #腾讯云刷新
 #见https://blog.happyking.top/p/20230109/
 tencentcdn:
-  secretId: 'AKIDRtRyPglmfM5oNsIizhGcnnZK8nEThwCG' ## 你在https://console.cloud.tencent.com/cam/capi 获取到的SecretId
-  secretKey: '9B4vdItY4ShleMucJuW9br6FC5sa9Xkp' ## 你在https://console.cloud.tencent.com/cam/capi 获取到的SecretKey
+  secretId: '#' ## 你在https://console.cloud.tencent.com/cam/capi 获取到的SecretId
+  secretKey: '#' ## 你在https://console.cloud.tencent.com/cam/capi 获取到的SecretKey
   type: 1 #刷新方式,1为只刷新变更资源,2为刷新网站下的全部缓存
   timer: 90000 #延时器,单位为毫秒,延时多长时间再执行刷新命令
 
