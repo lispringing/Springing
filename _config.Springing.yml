@@ -6,8 +6,7 @@ menu: #菜单
      查找标签: /tags/ || iconfont icon-biaoqian
      文章分类: /categories/ || iconfont icon-fenlei
    发现||:
-     胡思乱想: /bb/ ||
-     小王音乐: https://music.happyking.top || iconfont icon-yinle
+     小王音乐: https://happyking.top || iconfont icon-yinle
      时光相册: /gallery/ || iconfont icon-tupian
    本站||:
      关于博主: /about/ || iconfont icon-guanyu
@@ -396,18 +395,18 @@ google_adsense:
 # 主题色
 theme_color:
   enable: true
-  main: "#F44E5A" # 粉红色
-  paginator: "#F44E5A" # 分页器
+  main: "#4375ff" # 粉红色
+  paginator: "#4375ff" # 分页器
   button_hover: "#FF7242" # 按钮悬停
-  text_selection: "#F44E5A" # 文本选择
+  text_selection: "#4375ff" # 文本选择
   link_color: "#99a9bf"
   meta_color: "#858585"
   hr_color: "#A4D8FA"
   code_foreground: "#F47466" # 代码前景
   code_background: "rgba(27, 31, 35, .05)" # 代码背景
-  toc_color: "#F44E5A" # TOC目录颜色
-  blockquote_padding_color: "#F44E5A" # 块引用填充颜色
-  blockquote_background_color: "#F44E5A" # 块引用背景颜色
+  toc_color: "#4375ff" # TOC目录颜色
+  blockquote_padding_color: "#4375ff" # 块引用填充颜色
+  blockquote_background_color: "#4375ff" # 块引用背景颜色
 
 #主页大标题距离顶部高度
 index_site_info_top:
@@ -634,7 +633,7 @@ rightside_item_order:
   show: # toc,chat,comment
 
 # 图片放大查看模式(下面这两个二选一)
-medium_zoom: true 
+medium_zoom: true
 fancybox: false 
 
 # mermaid

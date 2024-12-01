@@ -1,7 +1,7 @@
 /*颜色属性自定义*/
 [data-theme=light]{
   --caojunyi: #000000b4;
-  --happyking: #2eb9dc;
+  --happyking: #cad8dc;
   --lihaoran: #ffffff;
   --xuhaoyu: #e6e0e0;
   --mj-card-bg: #ffffff;
@@ -179,12 +179,12 @@
 /*-----------------------------------鼠标引入----------------------------------*/
 /* 鼠标样式 */
 body {
-  cursor: url("https://blog.happyking.top/fonts/normal.cur"), default;
+  cursor: url("https://blog.springing.top/fonts/normal.cur"), default;
 }
 a,
 img,
 button {
-  cursor: url("https://blog.happyking.top/fonts/link.cur"), default !important;
+  cursor: url("https://blog.springing.top/fonts/link.cur"), default !important;
 }
 
 /*------------------------------导航栏---------------------------------------------------------------*/
