@@ -1,5 +1,13 @@
+#基础配置
+favicon: /img/favicon.webp  #网站的图标
+anchor: false #锚点.动态url变化，不建议开启，不利于搜索引擎收录，以及评论
+archive_img: #归档界面的头图 (css文件覆盖头图了，填写此项没用)
+tag_img: #标签界面的头图 (css文件覆盖头图了，填写此项没用)
+
+
+
 #导航目录模块
-menu: #菜单
+menu:
    博客: /
    文库||:
      文章归档: /archives/ || iconfont icon-guidangrenwu
@@ -13,13 +21,12 @@ menu: #菜单
      留言信箱: /comments/ || iconfont icon-liuyanban-05
      友情链接: /link/ || iconfont icon-lianjie
 
-
 #文章代码块设置
-highlight_theme: mac #  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: mac # 几种主题 darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true #代码复制功能
 highlight_lang: true #显示代码语言
 highlight_shrink: false # 代码框不展开
-highlight_height_limit: false # unit: px
+highlight_height_limit: false # 高度设置，单位为多少px
 code_word_wrap: false
 
 #是否允许复制
@@ -59,9 +66,6 @@ katex:
   per_page: false
   hide_scrollbar: true
 
-#网站的图标（艹了，不想改了）
-favicon: /img/favicon.webp
-
 #个人头像
 avatar:
   img: /img/avatar.webp
@@ -75,12 +79,6 @@ index_img:
 
 #当未在md文件表头配置时，显示以下图片
 default_top_img: 
-
-#归档（时光机）界面的图片
-archive_img: 
-
-#tag界面的图片
-tag_img: 
 
 # The banner image of tag page
 # format:
@@ -147,8 +145,6 @@ index_post_content:
   method: 2
   length: 333 #节选文章的前333个字
 
-#锚点.动态url变化
-anchor: false
 
 #文章目录
 toc:
@@ -856,7 +852,6 @@ businesscard:
   back4: 大家有不明白的地方可以加我的QQ(见正面)
 
 
-#
 #                             _ooOoo_
 #                            o8888888o
 #                            88" . "88
