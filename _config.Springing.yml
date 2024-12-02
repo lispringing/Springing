@@ -552,7 +552,8 @@ aside:
       link: https://github.com/XINGMOUREN
   card_announcement: #公告栏
     enable: true
-    content: <p>博主备战高考中,博客先暂时不搞了</p><p>本站会默认缓存css,js以及部分页面文件用于优化访问速度,请悉知,如果遇到问题可以尝试Ctrl+F5进行缓存强制刷新</p><p>右键菜单中>主题切换选项可以切换主题,按Ctrl+右键可以打开原生菜单</p><p>建议使用主域名blog.happyking.top访问本站,备用线路无法启用sw可能会降低浏览体验</p>
+    content: <div id="welcome-info"></div>
+    #<p>博主备战高考中,博客先暂时不搞了</p><p>本站会默认缓存css,js以及部分页面文件用于优化访问速度,请悉知,如果遇到问题可以尝试Ctrl+F5进行缓存强制刷新</p><p>右键菜单中>主题切换选项可以切换主题,按Ctrl+右键可以打开原生菜单</p><p>建议使用主域名blog.happyking.top访问本站,备用线路无法启用sw可能会降低浏览体验</p>
     #转圈的小人<div class="twopeople"><div class="container" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width:200px;max-height:200px;touch-action:none;width:640px;height:640px;"></canvas></div><script src="https://cdn1.tianli0.top/gh/Justlovesmile/CDN/js/twopeople1.js"></script><script src="https://cdn1.tianli0.top/gh/Justlovesmile/CDN/js/zdog.dist.js"></script><script id="rendered-js" src="https://cdn1.tianli0.top/gh/Justlovesmile/CDN/js/twopeople.js"></script><style>.twopeople{margin:0;align-items:center;justify-content:center;text-align:center;}canvas{display:block;margin:0 auto;cursor:move;}</style></div> 
   card_recent_post: #最近文章更新
     enable: true
@@ -726,6 +727,7 @@ inject:
   bottom:
      #- <script data-pjax src="/js/main/pace/pace.min.js" defer ></script> #pace加载条
      - <script src="/js/jq.js"></script> #JQ库
+     - <script defer="true" src="/js/welcome.js"></script> # 个性定位欢迎信息
      - <script data-pjax defer async src="/js/custom.js" ></script> #自定义js
      - <script defer src="/js/rightmenu.js"></script> #右键菜单
      - <script async src="/random/random.js"></script> #随机文章
