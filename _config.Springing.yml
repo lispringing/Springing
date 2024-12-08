@@ -3,6 +3,15 @@ favicon: /img/favicon.webp  #网站的图标
 anchor: false #锚点.动态url变化，不建议开启，不利于搜索引擎收录，以及评论
 archive_img: #归档界面的头图 (css文件覆盖头图了，填写此项没用)
 tag_img: #标签界面的头图 (css文件覆盖头图了，填写此项没用)
+highlight_theme: mac #文章代码块设置,几种主题 darker / pale night / light / ocean / mac / mac light / false
+highlight_copy: true #代码复制功能
+highlight_lang: true #显示代码语言
+highlight_shrink: false #代码框不展开
+highlight_height_limit: false #高度设置，单位为多少px
+code_word_wrap: false
+photofigcaption: false #图片描述文字
+flink_style: flexcard # 友联样式 这里提供三种主题butterfly | volantis | flexcard
+
 
 
 
@@ -14,20 +23,11 @@ menu:
      查找标签: /tags/ || iconfont icon-biaoqian
      文章分类: /categories/ || iconfont icon-fenlei
    发现||:
-     小王音乐: https://happyking.top || iconfont icon-yinle
      时光相册: /gallery/ || iconfont icon-tupian
    本站||:
      关于博主: /about/ || iconfont icon-guanyu
      留言信箱: /comments/ || iconfont icon-liuyanban-05
      友情链接: /link/ || iconfont icon-lianjie
-
-#文章代码块设置
-highlight_theme: mac # 几种主题 darker / pale night / light / ocean / mac / mac light / false
-highlight_copy: true #代码复制功能
-highlight_lang: true #显示代码语言
-highlight_shrink: false # 代码框不展开
-highlight_height_limit: false # 高度设置，单位为多少px
-code_word_wrap: false
 
 #是否允许复制
 copy:
@@ -183,8 +183,7 @@ related_post:
   limit: 6 # Number of posts displayed
   date_type: created # or created or updated 文章日期顯示創建日或者更新日
 
-# figcaption (圖片描述文字)
-photofigcaption: false
+
 
 # post_pagination (分頁)
 # value: 1 || 2 || false
@@ -548,8 +547,7 @@ aside:
       link: https://github.com/XINGMOUREN
   card_announcement: #公告栏
     enable: true
-    content: <div id="welcome-info"></div>
-    #<p>博主备战高考中,博客先暂时不搞了</p><p>本站会默认缓存css,js以及部分页面文件用于优化访问速度,请悉知,如果遇到问题可以尝试Ctrl+F5进行缓存强制刷新</p><p>右键菜单中>主题切换选项可以切换主题,按Ctrl+右键可以打开原生菜单</p><p>建议使用主域名blog.happyking.top访问本站,备用线路无法启用sw可能会降低浏览体验</p>
+    content: <p>本站会默认缓存css,js以及部分页面文件用于优化访问速度,请悉知,如果遇到问题可以尝试Ctrl+F5进行缓存强制刷新</p><p>右键菜单中>主题切换选项可以切换主题,按Ctrl+右键可以打开原生菜单</p><p>建议使用主域名blog.happyking.top访问本站,备用线路无法启用sw可能会降低浏览体验</p>
     #转圈的小人<div class="twopeople"><div class="container" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width:200px;max-height:200px;touch-action:none;width:640px;height:640px;"></canvas></div><script src="https://cdn1.tianli0.top/gh/Justlovesmile/CDN/js/twopeople1.js"></script><script src="https://cdn1.tianli0.top/gh/Justlovesmile/CDN/js/zdog.dist.js"></script><script id="rendered-js" src="https://cdn1.tianli0.top/gh/Justlovesmile/CDN/js/twopeople.js"></script><style>.twopeople{margin:0;align-items:center;justify-content:center;text-align:center;}canvas{display:block;margin:0 auto;cursor:move;}</style></div> 
   card_recent_post: #最近文章更新
     enable: true
@@ -723,7 +721,6 @@ inject:
   bottom:
      #- <script data-pjax src="/js/main/pace/pace.min.js" defer ></script> #pace加载条
      - <script src="/js/jq.js"></script> #JQ库
-     - <script defer="true" src="/js/welcome.js"></script> # 个性定位欢迎信息
      - <script data-pjax defer async src="/js/custom.js" ></script> #自定义js
      - <script defer src="/js/rightmenu.js"></script> #右键菜单
      - <script async src="/random/random.js"></script> #随机文章
@@ -732,16 +729,12 @@ inject:
      - <script src="/js/fps.js"></script> #帧率检测的js
      - <script async src="/js/icon.js"></script> #网站十二生肖
 
-
-
      - <script charset="UTF-8" id="LA_COLLECT" src="/js/51la.js"></script> #51la统计代码
      - <script> LA.init({id:"JpEoD1xif1bRQ9fx",ck:"JpEoD1xif1bRQ9fx"})</script> #51la统计密钥
 
 
 
 
-# 友链样式，butterfly为默认样式，volantis为站点卡片样式.flexcard为弹性卡片样式
-flink_style: flexcard # butterfly | volantis | flexcard
 
 
 # CDN
@@ -850,6 +843,14 @@ businesscard:
   back2: <a href="https://blog.happyking.top/">https://blog.happyking.top/</a>
   back3: 本网站由腾讯云提供cdn加速
   back4: 大家有不明白的地方可以加我的QQ(见正面)
+
+
+
+
+
+
+
+
 
 
 #                             _ooOoo_
