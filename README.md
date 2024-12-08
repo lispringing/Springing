@@ -16,7 +16,7 @@
   </p>
 </p>
 
-[![Library][library-screenshot]](https://music.qier222.com)
+![圆角-微信图片_20241208110900.webp](https://immm.springing.top/2024/12/08/67550e6ce77b9.webp)
 
 ==========================================================================
 # ❤️快速开始
