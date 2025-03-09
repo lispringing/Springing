@@ -834,7 +834,7 @@ CDN:
 #文末银行卡片
 businesscard:
   enable: false #总开关
-  QR_code: https://blog.happyking.top/img/avatar.webp #加群二维码
+  QR_code: https://blog.springing.top/img/avatar.webp #加群二维码
   master: 欢乐小王 #群主ID
   group: 2638526782 #QQ群号
   created: HappyKing #建群时间

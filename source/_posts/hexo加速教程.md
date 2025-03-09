@@ -44,10 +44,10 @@ archive_img: https://cdn1.tianli0.top/npm/happyking/link/1.webp
 ```
 **2.小王法**
 ~~使用小王自己搭建的上传工具（上传的图片都会自动cdn加速,无需注册登录,图片永久保存）ps：没错我是来给自己打广告的~~开学了,该服务停止维护
-{% link 图片托管, https://blog.happyking.top/img/avatar.webp  %}
+{% link 图片托管, https://blog.springing.top/img/avatar.webp  %}
 >可能出现的bug
 >jsdeliver时免费服务,更新资源后缓存可能无法及时刷新,使用以下工具进行缓存刷新
-{% link 刷新工具, https://blog.happyking.top/img/avatar.webp  %}
+{% link 刷新工具, https://blog.springing.top/img/avatar.webp  %}
 
 # 去除无需版块
 >很明显,我们的博客是由很多版块构成的,加载他们的时候也是要占用桌子的空间的,接下来以我的butterfly主题给大家举个例子

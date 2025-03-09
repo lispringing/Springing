@@ -13,21 +13,21 @@ aside: false
 ```yml
  - name: 欢乐小王
    link: https://blog.happyking.top/
-   avatar: https://blog.happyking.top/img/avatar.webp
+   avatar: https://blog.springing.top/img/avatar.webp
    descr: 聚散无常,别来无恙.
 ```
 #### 2.Github网站(GitHub page托管)
 ```yml
  - name: 欢乐小王
    link: https://xingmouren.github.io
-   avatar: https://blog.happyking.top/img/avatar.webp
+   avatar: https://blog.springing.top/img/avatar.webp
    descr: 聚散无常,别来无恙.
 ```
 #### 3.Netlify网站(Vercel托管)
 ```yml
  - name: 欢乐小王
    link: https://vercel.happyking.top/
-   avatar: https://blog.happyking.top/img/avatar.webp
+   avatar: https://blog.springing.top/img/avatar.webp
    descr: 聚散无常,别来无恙.
 ```
 ## 友链添加方式
