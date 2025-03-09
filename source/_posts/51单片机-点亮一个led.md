@@ -7,12 +7,12 @@ description: 51单片机学习笔记
 tags:
 - 51单片机
 categories:
-- 优质教程
+- 学习笔记
 top: false
 abbrlink: '20250309'
 ---
 
->de
+>
 
 
 
