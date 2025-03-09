@@ -19,7 +19,7 @@ abbrlink: 565531
 >这是F12爬的<a href="https://blog.eurkon.com/">eurkon</a>大佬的.
 
 ## 样式预览
-![](https://bu.dusays.com/2023/07/16/64b359af9095d.webp)
+![](./img/64b359af9095d.webp)
 
 ## 代码
 引入css文件（我的因为字体的原因,字体改为白色,你们因情况而定)
