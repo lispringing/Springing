@@ -710,7 +710,7 @@ css_prefix: true
 inject:
   head:
      - <script data-pjax async src="/js/ie.js"></script>  #老旧浏览器提示,浏览器判断
-     - <script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://blog.happyking.top/js/main/pace/pace.min.js"></script> #pjax优化
+     - <script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://blog.springing.top/js/main/pace/pace.min.js"></script> #pjax优化
      - <link rel="stylesheet" type="text/css" href="/css/font.css" > #字体等前置组件载入
      - <link rel="stylesheet" type="text/css" tag="theme" href="/css/happyking/cao.css"> #主题的css
      - <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'"> #swiper.css引入
