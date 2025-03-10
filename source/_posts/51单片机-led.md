@@ -36,6 +36,43 @@ P1=0xFE; //1111 1110 0x代表使用16进制 F是1111 E 是1110
 }
 ```
 
+# LED灯闪烁
+>在stc下载工具中有一个工具可以辅助你生成延时代码，但是要注意自己的单片机的晶振频率
+
+>代码编写如下
+```c
+#include <REGX52.H>
+#include <INTRINS.H> //这个是延时函数用到的头文件
+
+void Delay500ms()		//晶振频率@11.0592MHz的延时函数
+{
+	unsigned char i, j, k;
+
+	_nop_();
+	_nop_();
+	i = 22;
+	j = 3;
+	k = 227;
+	do
+	{
+		do
+		{
+			while (--k);
+		} while (--j);
+	} while (--i);
+}
+
+void main()
+{
+while(1) //一直循环这个过程
+{
+P1=0xFE;// 1111 1110 亮第一个
+Delay500ms();
+P1=0xFF; //1111 1111 全灭
+Delay500ms();	  
+}
+}
+```
 
 
 
