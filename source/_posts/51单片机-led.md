@@ -74,6 +74,102 @@ Delay500ms();
 }
 ```
 
+# LED流水灯
+
+可以通过一下这种简单的方式实现
+``` c
+#include <REGX52.H>
+#include <INTRINS.H> //这个是延时函数用到的头文件
+
+void Delay100ms()		//@11.0592MHz 延时100ms
+{
+	unsigned char i, j, k;
+
+	_nop_();
+	_nop_();
+	i = 5;
+	j = 52;
+	k = 195;
+	do
+	{
+		do
+		{
+			while (--k);
+		} while (--j);
+	} while (--i);
+}
+
+
+void main()
+{
+while(1) //这里的1代表一直循环
+{
+P1=0xFE; // 1111 1110
+Delay100ms();
+P1=0xFD; //1111 1101
+Delay100ms();
+P1=0xFB; //1111 1011
+Delay100ms();
+P1=0xF7; //1111 0111
+Delay100ms();
+P1=0xEF; //1110 1111
+Delay100ms();
+P1=0xDF; //1101 1111
+Delay100ms();
+P1=0xBF; //1011 1111
+Delay100ms();
+P1=0x7F; //0111 1111
+Delay100ms();	  
+}
+}
+```
+但是如果我们想修改延时时间过于繁琐，可以有一下版本
+
+```c
+#include <REGX52.H>
+#include <INTRINS.H>
+
+void Delayxms(unsigned int _ms)     //这个函数是一个延时x秒的函数，你只要给它传入参数就行了，这样比较方便
+{
+    unsigned char i, j;
+
+    while (_ms--)
+    {
+        _nop_();
+        i = 2;
+        j = 199;
+        do
+        {
+            while (--j);
+        } while (--i);
+    }
+}
+
+
+void main()
+{
+while(1)
+{
+P1=0xFE; // 1111 1110
+Delayxms(100);
+P1=0xFD; //1111 1101
+Delayxms(100);
+P1=0xFB; //1111 1011
+Delayxms(100);
+P1=0xF7; //1111 0111
+Delayxms(100);
+P1=0xEF; //1110 1111
+Delayxms(500);
+P1=0xDF; //1101 1111
+Delayxms(500);
+P1=0xBF; //1011 1111
+Delayxms(500);
+P1=0x7F; //0111 1111
+Delayxms(500);	  
+}
+}
+```
+# 使用独立的开关来控制LED的亮灭
 
 
 
