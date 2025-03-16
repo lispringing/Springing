@@ -3,5 +3,4 @@ public/Thumbs.db
 db.json
 *.log
 .idea
-public
 .DS_Store

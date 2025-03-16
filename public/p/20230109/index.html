@@ -1,0 +1,451 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>腾讯云cdn自动刷新插件(使用文档+实现原理) | Springing</title><meta name="keywords" content="npm插件,CDN,代码开发"><meta name="author" content="小春子"><meta name="copyright" content="小春子"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hexo 腾讯云CDN主动刷新插件这是一个Hexo使用腾讯云CDN自动刷新的插件，当你的博客启用了腾讯云的cdn后,每次部署完成后都要手动刷新cdn的缓存,故开发此插件配合腾讯云cdn使用 目前只支持腾讯云的CDN刷新,后期的话可能会考虑开发其他厂商的cdn（或者你可以自己魔改源代码）  注意,本插件能够自动刷新变更的文件或者自动刷新全部的缓存,但是不支持刷新指定URL链接的缓存,如果你执意想要刷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="腾讯云cdn自动刷新插件(使用文档+实现原理)">
+<meta property="og:url" content="https://blog.springing.top/p/20230109/index.html">
+<meta property="og:site_name" content="Springing">
+<meta property="og:description" content="Hexo 腾讯云CDN主动刷新插件这是一个Hexo使用腾讯云CDN自动刷新的插件，当你的博客启用了腾讯云的cdn后,每次部署完成后都要手动刷新cdn的缓存,故开发此插件配合腾讯云cdn使用 目前只支持腾讯云的CDN刷新,后期的话可能会考虑开发其他厂商的cdn（或者你可以自己魔改源代码）  注意,本插件能够自动刷新变更的文件或者自动刷新全部的缓存,但是不支持刷新指定URL链接的缓存,如果你执意想要刷">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bu.dusays.com/2023/07/16/64b3589e5d432.webp">
+<meta property="article:published_time" content="2023-01-09T11:57:40.000Z">
+<meta property="article:modified_time" content="2023-01-12T09:06:28.000Z">
+<meta property="article:author" content="小春子">
+<meta property="article:tag" content="npm插件">
+<meta property="article:tag" content="CDN">
+<meta property="article:tag" content="代码开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bu.dusays.com/2023/07/16/64b3589e5d432.webp"><link rel="shortcut icon" href="/img/favicon.webp"><link rel="canonical" href="https://blog.springing.top/p/20230109/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#FF3842"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/apple-touch-icon.webp"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/favicon-32x32.webp"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/favicon-16x16.webp"/><link rel="mask-icon" href="/img/siteicon/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/css/main/fontawesome/fontawesome.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/main/snackbar/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"YS1ZHKBSSM","apiKey":"3cfe0b753138610a4e366d945ea3fda5","indexName":"hexo_blog","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#","bgDark":"#","position":"bottom-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn1.tianli0.top/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn1.tianli0.top/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '腾讯云cdn自动刷新插件(使用文档+实现原理)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-12 17:06:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><link rel="stylesheet" href="/css/main/layout/aplayer.css"><div id="aplayer"></div><script src="/js/main/layout/Meting.min.js" async></script><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script data-pjax async src="/js/ie.js"></script><script data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}' src="https://blog.springing.top/js/main/pace/pace.min.js"></script><link rel="stylesheet" type="text/css" href="/css/font.css" ><link rel="stylesheet" type="text/css" tag="theme" href="/css/happyking/cao.css"><link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" type="text/css" href="/css/common.css" ><link rel="stylesheet" media="defer" onload="this.media='all'" href="//at.alicdn.com/t/c/font_3294602_gip1xjnhg6.css"><link rel="stylesheet" type="text/css" media="defer" onload="this.media='all'" href="/css/categories.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.webp" onerror="onerror=null;src='https://bu.dusays.com/2023/07/14/64b14669d264f.webp'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 博客</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 文库</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"></ul><ul class="menus_item_child" style="left:-108px;"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-guidangrenwu"></i><span> 文章归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian"></i><span> 查找标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei"></i><span> 文章分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 本站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"></ul><ul class="menus_item_child" style="left:-108px;"><li><a class="site-page child" href="/about/"><i class="fa-fw iconfont icon-guanyu"></i><span> 关于博主</span></a></li><li><a class="site-page child" href="/comments/"><i class="fa-fw iconfont icon-liuyanban-05"></i><span> 留言信箱</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友情链接</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://bu.dusays.com/2023/07/16/64b3589e5d432.webp')"><nav id="nav"><span id="blog_name"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon fas fa-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.springing.top/" rel="external nofollow" title="前往春子的主页" target="_blank" one-link-mark="yes"><img class="back-menu-item-icon" src="https://blog.springing.top/img/favicon.webp"/><span class="back-menu-item-text">主页</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">应用</div><div class="back-menu-list"><a class="back-menu-item" href="https://ai.springing.top" title="跟AI聊聊天" target="_blank" rel="noopener nofollow" one-link-mark="yes"><img class="back-menu-item-icon" src="https://immm.springing.top/2024/12/08/67550d5cc76b1.webp"/><span class="back-menu-item-text">AI-chat             </span></a></div></div></div></div><a id="site-name" href="/"><div class="title">Springing</div><i class="fa-solid fa-house"></i></a></span><div class="mask-name-container"><center id="name-container"><a id="page-name" href="javascript:rmf.scrollToTop()">PAGE_NAME</a></center></div><div id="menus"><div class="nav-button" id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" title="浅色和深色模式转换" onclick="rmf.switchDarkMode()"><i class="fas fa-adjust"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn"><i class="fas fa-arrow-up"></i><span id="percent" onclick="btf.scrollToDest(0,500)">0</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 博客</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 文库</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"></ul><ul class="menus_item_child" style="left:-108px;"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-guidangrenwu"></i><span> 文章归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian"></i><span> 查找标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei"></i><span> 文章分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 本站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"></ul><ul class="menus_item_child" style="left:-108px;"><li><a class="site-page child" href="/about/"><i class="fa-fw iconfont icon-guanyu"></i><span> 关于博主</span></a></li><li><a class="site-page child" href="/comments/"><i class="fa-fw iconfont icon-liuyanban-05"></i><span> 留言信箱</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友情链接</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">腾讯云cdn自动刷新插件(使用文档+实现原理)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-09T11:57:40.000Z" title="发表于 2023-01-09 19:57:40">2023-01-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-12T09:06:28.000Z" title="更新于 2023-01-12 17:06:28">2023-01-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/">代码开发</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="腾讯云cdn自动刷新插件(使用文档+实现原理)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Hexo-腾讯云CDN主动刷新插件"><a href="#Hexo-腾讯云CDN主动刷新插件" class="headerlink" title="Hexo 腾讯云CDN主动刷新插件"></a>Hexo 腾讯云CDN主动刷新插件</h1><p>这是一个Hexo使用腾讯云CDN自动刷新的插件，当你的博客启用了腾讯云的cdn后,每次部署完成后都要手动刷新cdn的缓存,故开发此插件配合腾讯云cdn使用</p>
+<p>目前只支持腾讯云的CDN刷新,后期的话可能会考虑开发其他厂商的cdn（<del>或者你可以自己魔改源代码</del>）</p>
+<blockquote>
+<p>注意,本插件能够自动刷新变更的文件或者自动刷新全部的缓存,但是不支持刷新指定URL链接的缓存,如果你执意想要刷新url链接,可以考虑对插件进行改造(具体请见本文的<code>开发过程/原理说明</code>部分)</p>
+</blockquote>
+<h1 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h1><p>前往<a target="_blank" rel="noopener" href="https://blog.happyking.top/p/20230109/">腾讯云CDN主动刷新插件</a>阅读插件说明</p>
+<p>在你的博客根目录中运行npm安装指令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cdn-refresh -s</span><br></pre></td></tr></table></figure>
+<p>在hexo的<code>_congig.yml</code>中添加以下配置项目</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tencentcdn:</span></span><br><span class="line"> <span class="attr">secretId:</span> <span class="string">&#x27;*******************&#x27;</span> <span class="comment"># 你在https://console.cloud.tencent.com/cam/capi 获取到的ID</span></span><br><span class="line"> <span class="attr">secretKey:</span> <span class="string">&#x27;******************&#x27;</span> <span class="string">*</span> <span class="comment"># 你在https://console.cloud.tencent.com/cam/capi 获取到的SecretKey</span></span><br><span class="line"> <span class="attr">type:</span> <span class="number">1</span> <span class="comment">#刷新方式,1为只刷新变更资源,2为刷新网站下的全部缓存</span></span><br><span class="line"> <span class="attr">timer:</span> <span class="number">60000</span> <span class="comment">#延时器,单位为毫秒,延时多长时间再执行刷新命令,不需要的填写0</span></span><br></pre></td></tr></table></figure>
+<p>在hexo的<code>_congig.yml</code>的<code>deploy</code>配置项中添加</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">tencent_cdn</span></span><br></pre></td></tr></table></figure>
+<p>延时器说明:主要为网站托管在GitHub Pages,vercel,或者netlify的用户设置,当你更新网站后,这些托管平台需要一段的时间来构建页面,如果不设置延时器,那么会导致cdn立即刷新,拉去到未更新的源站内容,所以说延时器必须填写,具体数值看自己的页面构建速度,如果是其他部署方式,不需要延时器的就填写0</p>
+<p>注意:<code>- type: tencent_cdn</code>一定要加在最后面,因为hexo d这个命令是按照type的顺序运行的,如果你加载了前面会先刷新cdn的缓存,再上传文件,达不到更新网站的效果</p>
+<p>运行<code>hexo d</code>即可上传网站并且刷新cdn，控制台提示如下为刷新成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CDN刷新结果&#123;<span class="string">&quot;code&quot;</span>:0,<span class="string">&quot;message&quot;</span>:<span class="string">&quot;&quot;</span>,<span class="string">&quot;codeDesc&quot;</span>:<span class="string">&quot;Success&quot;</span>,<span class="string">&quot;data&quot;</span>:&#123;<span class="string">&quot;count&quot;</span>:1,<span class="string">&quot;task_id&quot;</span>:<span class="string">&quot;1540810210711616112&quot;</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意,只有code返回为0才为正常刷新,如果返回其他字符段(一般为4000),请检查自己的api ID 与密钥是否填写正确,确认无误后请检查自己的_congig.yml文件中的url:配置选项中的网址是否为/结尾的,列如</p>
+<p>url:<a target="_blank" rel="noopener" href="https://blog.happyking.top(这是错误的填写方法,必须是/结尾">https://blog.happyking.top(这是错误的填写方法,必须是/结尾</a>)</p>
+<p>url:<a target="_blank" rel="noopener" href="https://blog.happyking.top/(正确">https://blog.happyking.top/(正确</a>)</p>
+</blockquote>
+<p>计划开发其他家的cdn缓存刷新</p>
+<h1 id="具体配置项说明"><a href="#具体配置项说明" class="headerlink" title="具体配置项说明"></a>具体配置项说明</h1><p>我们的主要配置项有两个,第一个用于配置变量,插件运行的时候会带入你填写好的东西来运行</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tencentcdn:</span></span><br><span class="line"> <span class="attr">secretId:</span> <span class="string">&#x27;*******************&#x27;</span> <span class="comment"># 你在https://console.cloud.tencent.com/cam/capi 获取到的ID</span></span><br><span class="line"> <span class="attr">secretKey:</span> <span class="string">&#x27;******************&#x27;</span> <span class="string">*</span> <span class="comment"># 你在https://console.cloud.tencent.com/cam/capi 获取到的SecretKey</span></span><br><span class="line"> <span class="attr">type:</span> <span class="number">1</span> <span class="comment">#刷新方式,1为只刷新变更资源,2为刷新网站下的全部缓存</span></span><br><span class="line"> <span class="attr">timer:</span> <span class="number">60000</span> <span class="comment">#延时器,单位为毫秒,延时多长时间再执行刷新命令,不需要的填写0</span></span><br></pre></td></tr></table></figure>
+<p>首先是<code>secretId</code>和<code>secretKey</code>这两个需要前往腾讯云的密钥控制台获取,作用就是让插件获得你的cdn操作权限</p>
+<blockquote>
+<p>注意,腾讯云生成的密钥有两种类型:一种是主账号的密钥(获得你账号的全部权限),还有一种则是子账号密钥(可以指定权限),这里推荐使用子账号的密钥,当然使用主账号的密钥也是可以的,只是请注意保管好,要不然可能会造成损失</p>
+</blockquote>
+<p>之后是<code>type</code>选项，这里只提供两种选择,一种是”只刷新更新的资源”,另一种是”刷新全站缓存”,当你的文章进行了大版本的更新(比如说魔改了很多文件),建议你食用<code>全站刷新</code>，因为用第一种方式的话CDN可能会误判更新文件(亲身经理,我也不知道为什么)</p>
+<p>最后的选项是<code>timer</code>延时器选项,对于这一选项的配置你首先要知道自己的博客是什么的部署方式</p>
+<p>若你的博客部署在<code>GitHub Pages</code>,<code>vercel(存放生成后的文件仓库部署,不是源代码仓库)</code>，<code>netlify（同Vercel）</code>上面,因为你的GitHub Pages在源代码上传后需要时间去构建网站,所以说<code>延时器</code>就需要填写比这段时间稍微多一点,目前我的部署方式是<code>netlify直接部署的静态文件仓库</code>,而我的页面构建时间一般为1分10秒左右,所以说我的延时器就填写了90000</p>
+<p>如果你的博客部署在<code>自己的服务器</code>,<code>vercel(源代码仓库部署)</code>,<code>netlify（源代码仓库部署）</code>，因为运行完毕<code>hexo g</code>命令后页面就已经更新了,所以说不需要填写延时器,故设置为0</p>
+<p>第二个配置项加在<code>deploy</code>上,用于触发插件运行,<strong><em>注意:这个一定要放在deploy的最后面</em></strong></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">tencent_cdn</span></span><br></pre></td></tr></table></figure>
+<p>比如说我的</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">gitHub:</span> <span class="string">*************************************</span> <span class="comment">#上传到静态文件仓库</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">cjh_bing_url_submitter</span> <span class="comment">#再向bing提交url</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">tencent_cdn</span> <span class="comment">#最后刷新腾讯云的CDN</span></span><br></pre></td></tr></table></figure>
+<h1 id="开发过程-原理说明"><a href="#开发过程-原理说明" class="headerlink" title="开发过程/原理说明"></a>开发过程/原理说明</h1><h2 id="开发的原因"><a href="#开发的原因" class="headerlink" title="开发的原因"></a>开发的原因</h2><p>之所以开发这个插件是因为之前本站开启了<code>sw</code>,而且为了保证每一次sw刷新后用户拉取的资源为最新资源,所以说我当时就把CDN设置为了<code>html</code>文件不刷新,这样更新文章后无需自动刷新便可以达到更新网站的目的,(<del>当然修改js,css文件后还需要手动刷新缓存</del>)</p>
+<p>但是这样的问题也是显而易见,那就是我的<code>html</code>文件基本上全部回源了,但是我的静态站点又是以html文件居多,那我这个CDN不是用了个寂寞？</p>
+<p>所以说我便把我的CDN缓存设置为了全部缓存365天,但是问题也随之而来,那就是每次更新文章/魔改后,都要前往腾讯云控制台进行手动刷新，对此我也是很无语啊</p>
+<p>于是便开始开发这个插件,其实说起来也很简单,一开始我找到了<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-deploy-tencentcloud-cdn">hexo-deploy-tencentcloud-cdn </a>这个插件,但是很不幸,这个插件已经挂掉了，而且它只支持刷新你的首页,也就是说如果你更新了文章或者css,js一样还是要手动刷新,ps<del>原项目作者于2018年已经停止更新了,所以说我感觉指望作者开发玩不太可靠</del></p>
+<h2 id="着手修复"><a href="#着手修复" class="headerlink" title="着手修复"></a>着手修复</h2><p>于是我便开始着手修复这个插件(或者说是在它的基础上加以改造)</p>
+<blockquote>
+<p>这个插件的原理很简单,就是通过腾讯云的api接口上传CDN刷新的post请求</p>
+</blockquote>
+<p>所以说首先我修复了它的api接口功能,这是改动后的第一版</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="keyword">function</span>(<span class="params">args</span>) &#123;</span><br><span class="line"><span class="keyword">var</span> qcloudSDK = <span class="built_in">require</span>(<span class="string">&#x27;./submit&#x27;</span>); </span><br><span class="line"><span class="keyword">var</span> config = <span class="variable language_">this</span>.<span class="property">config</span>;</span><br><span class="line"><span class="keyword">var</span> secret_Id = config.<span class="property">tencentcdn</span>.<span class="property">secretId</span>;</span><br><span class="line"><span class="keyword">var</span> secret_Key = config.<span class="property">tencentcdn</span>.<span class="property">secretKey</span>;</span><br><span class="line"><span class="keyword">var</span> url = config.<span class="property">url</span></span><br><span class="line">qcloudSDK.<span class="title function_">config</span>(&#123;</span><br><span class="line">    <span class="attr">secretId</span>: secret_Id,</span><br><span class="line">    <span class="attr">secretKey</span>: secret_Key</span><br><span class="line">&#125;)</span><br><span class="line">qcloudSDK.<span class="title function_">request</span>(<span class="string">&#x27;RefreshCdnUrl&#x27;</span>, &#123;</span><br><span class="line">    <span class="string">&#x27;urls.0&#x27;</span>: url</span><br><span class="line">&#125;, <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;腾讯云CDN首页刷新推送结果&#x27;</span> + res);</span><br><span class="line"><span class="comment">// console.log(&#x27;secret_Id:&#x27; + secret_Id);</span></span><br><span class="line"><span class="comment">// console.log(&#x27;secret_Key:&#x27; + secret_Key);</span></span><br><span class="line"><span class="comment">// console.log(&#x27;url:&#x27; + url);</span></span><br><span class="line">&#125;)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>其实我做的也就是把源码中的<code>1</code>改成了<code>0</code>(因为原来的插件太久没维护,所以说部分参数失效了),但这样的话我们完成了初步的api接口上传的功能</p>
+<p>之后要做的就是对插件的上传参数修改一下,一开始我是直接添加了一个配置项<code>refresh-url</code>,给他填写</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">https://blog.happyking.top/*/*.*</span></span><br></pre></td></tr></table></figure>
+<p>按照理论来说这样应该就ok了,但是最终的结果是不行,通过阅读<code>腾讯云apiv2.0</code>的文档得知腾讯云的url刷新方式不支持通配符,但是还有一种刷新方式—<code>目录刷新</code>所以说我只要将上传的post参数改为目录刷新的即可</p>
+<p>修改完成后便能够成功刷新cdn缓存了,但是我发现了一个问题就是,当你更新了源站资源后,托管平台(我的在netlify上面,用GitHub Action部署)需要一定的时间来进行页面构建,但是这个插件却在构建完成之前就提交了刷新请求,所以说导致刷新出的还是老旧的资源</p>
+<p>由于这个插件的运行是绑定在<code>hexo d</code>这个命令的,我也没找到让各个命令延时运行的方法,于是就采用了<code>setTimeout()</code>设定了一个延时器的选项让插件延时</p>
+<p>之后的工作就是填写package,<code>npm publish</code>发包就完工了</p>
+<h1 id="二次开发指南"><a href="#二次开发指南" class="headerlink" title="二次开发指南"></a>二次开发指南</h1><p>请修改<code>libs/push.js</code>这个文件</p>
+<p>具体参数请阅读<a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/570/38855#.E8.B0.83.E7.94.A8.E7.A4.BA.E4.BE.8B">全站加速网络 缓存刷新-API 文档-文档中心-腾讯云 (tencent.com)</a></p>
+<h1 id="答疑解惑"><a href="#答疑解惑" class="headerlink" title="答疑解惑"></a>答疑解惑</h1><p>question：这个插件可以刷新其他cdn厂商的缓存吗？<br>answer：不可以,因为不同厂商的cdn缓存刷新参数不同，本插件时根据腾讯云CDN来编写的，所以说只能刷新腾讯云CDN的缓存，如果你需要其他厂商的CDN刷新功能可以尝试<code>自己修改插件</code>或者<code>在评论区催促小王尽快开发</code></p>
+<p>question：刷新结果代码：code4000怎么回事？<br>answer：首先检查你的密钥ID与密钥是否正确,之后请确保你的<code>_congig.yml</code>url配置是以/结尾的,如果还不行,请在评论区留言,我会进一步排查，修复插件<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://blog.happyking.top/</span> <span class="comment">#这里务必是以/结尾的网址</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<div class="tip home"><p>这篇文章真的花费了小王很多时间和精力,能不能投喂一下小王qwq(下方打赏按钮)</p>
+</div>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>腾讯云cdn自动刷新插件(使用文档+实现原理)</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://blog.springing.top/p/20230109/">https://blog.springing.top/p/20230109/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>小春子</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2023-01-09</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2023-01-12</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/npm%E6%8F%92%E4%BB%B6/">npm插件</a><a class="post-meta__tags" href="/tags/CDN/">CDN</a><a class="post-meta__tags" href="/tags/%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91/">代码开发</a></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/07/16/64b3589e5d432.webp" data-sites="wechat,qq"></div><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn1.tianli0.top/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><link rel="stylesheet" href="/css/coin.css" media="defer" onload="this.media='all'"/><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">打赏</span><div class="coin-wrapper"><div class="coin"><div class="coin__middle"></div><div class="coin__back"></div><div class="coin__front"></div></div></div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://bu.dusays.com/2023/07/14/64b14639c17ce.webp" target="_blank"><img class="post-qr-code-img" src="https://bu.dusays.com/2023/07/14/64b14639c17ce.webp" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></button></div><audio id="coinAudio" src="/fonts/coin.mp3"></audio><script defer="defer" src="/js/coin.js"></script><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/p/20230115/"><img class="prev-cover" src="https://bu.dusays.com/2023/07/16/64b358bb77dd0.webp" onerror="onerror=null;src='https://bu.dusays.com/2023/07/14/64b14669d264f.webp'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">论这个网课,我们到底学到了什么？</div></div></a></div><div class="next-post pull-right"><a href="/p/110/"><img class="next-cover" src="/./img/64b35d0c67d36.webp" onerror="onerror=null;src='https://bu.dusays.com/2023/07/14/64b14669d264f.webp'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">安全上网指南</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div><div class="comment-barrage"></div><link rel="stylesheet" href="/css/commentBarrage.css"/><script src="/js/commentBarrage.js"></script></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.webp" onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/07/14/64b14669d264f.webp'" alt="avatar"/></div><div class="author-info__name">小春子</div><div class="author-info__description">聚散無常，别来无恙.</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">33</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="weixin://contacts/profile/w2638526782" target="_blank" title="我的微信"><i class="iconfont icon-weixin1"></i></a><a class="social-icon" href="mailto:2638526782@qq.com" target="_blank" title="邮件"><i class="iconfont icon-youjian"></i></a><a class="social-icon" href="https://www.zhihu.com/people/gui-hua-ju-zhu" target="_blank" title="我的知乎首页"><i class="iconfont icon-zhihu-square-fill"></i></a><a class="social-icon" href="https://space.bilibili.com/433911318?spm_id_from=333.337.0.0" target="_blank" title="我的bilibili主页"><i class="iconfont icon-icon_bilibili-square"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2638526782&amp;site=qq&amp;menu=yes" target="_blank" title="我的QQ"><i class="iconfont icon-QQ1"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=2052321878" target="_blank" title="我的网易云音乐"><i class="iconfont icon-netease-fill-square"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><p>本站会默认缓存css,js以及部分页面文件用于优化访问速度,请悉知,如果遇到问题可以尝试Ctrl+F5进行缓存强制刷新</p><p>右键菜单中>主题切换选项可以切换主题,按Ctrl+右键可以打开原生菜单</p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo-%E8%85%BE%E8%AE%AF%E4%BA%91CDN%E4%B8%BB%E5%8A%A8%E5%88%B7%E6%96%B0%E6%8F%92%E4%BB%B6"><span class="toc-text">Hexo 腾讯云CDN主动刷新插件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">快速开始</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E9%85%8D%E7%BD%AE%E9%A1%B9%E8%AF%B4%E6%98%8E"><span class="toc-text">具体配置项说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B-%E5%8E%9F%E7%90%86%E8%AF%B4%E6%98%8E"><span class="toc-text">开发过程&#x2F;原理说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-text">开发的原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9D%80%E6%89%8B%E4%BF%AE%E5%A4%8D"><span class="toc-text">着手修复</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97"><span class="toc-text">二次开发指南</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%94%E7%96%91%E8%A7%A3%E6%83%91"><span class="toc-text">答疑解惑</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/p/20250312/" title="Springing-静态的hexo博客框架/主题"><img src="/./img/" onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/07/14/64b14669d264f.webp'" alt="Springing-静态的hexo博客框架/主题"/></a><div class="content"><a class="title" href="/p/20250312/" title="Springing-静态的hexo博客框架/主题">Springing-静态的hexo博客框架/主题</a><time datetime="2025-03-12T00:00:00.000Z" title="发表于 2025-03-12 08:00:00">2025-03-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/20250309/" title="单片机-LED"><img src="/./img/12121.jpg" onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/07/14/64b14669d264f.webp'" alt="单片机-LED"/></a><div class="content"><a class="title" href="/p/20250309/" title="单片机-LED">单片机-LED</a><time datetime="2025-03-08T16:00:00.000Z" title="发表于 2025-03-09 00:00:00">2025-03-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/p/20241119/" title="学习通/超星 刷课脚本"><img src="/./img/674c4cea68859.png" onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/07/14/64b14669d264f.webp'" alt="学习通/超星 刷课脚本"/></a><div class="content"><a class="title" href="/p/20241119/" title="学习通/超星 刷课脚本">学习通/超星 刷课脚本</a><time datetime="2024-11-29T00:00:00.000Z" title="发表于 2024-11-29 08:00:00">2024-11-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer_deal"><a class="deal_link" href="mailto:2638526782@qq.com" title="邮件"><i class="iconfont icon-youjian"></i></a><a class="deal_link" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2638526782&amp;site=qq&amp;menu=yes" title="qq" target="_blank"><i class="iconfont icon-QQ1"></i></a><a class="deal_link" href="weixin://contacts/profile/w2638526782" title="微信" target="_blank"><i class="iconfont icon-weixin1"></i></a><a class="deal_link" href="https://github.com/XINGMOUREN" title="github" target="_blank"><i class="iconfont icon-github"></i></a><img class="footer_mini_logo entered loading" style="border-radius:50%" src="https://blog.springing.top/img/avatar.webp" onclick="btf.scrollToDest(0,500)" title="返回顶部"/><a class="deal_link" href="/bb/" title="胡思乱想"><i class="iconfont icon-shebeidongtai"></i></a><a class="deal_link" href="https://music.happyking.top" title="音乐" target="_blank"><i class="iconfont icon-yinle"></i></a><a class="deal_link" href="/comments/" title="留言板" target="_blank"><i class="iconfont icon-liuyanban-05"></i></a><a class="deal_link" href="/about/" title="关于我" target="_blank"><i class="iconfont icon-guanyu"></i></a></div><div id="Jay-footer"><div class="footer-group"><h3 class="footer-title">直达</h3><div class="footer-links"><a class="footer-item" href="https://www.happyking.top" target="_blank">我的主页</a><a class="footer-item" target="_blank" rel="noopener" href="https://music.happyking.top">在线音乐</a><a class="footer-item" target="_blank" rel="noopener" href="https://readme.happyking.top">火花官网</a><a class="footer-item" target="_blank" rel="noopener" href="https://calendar.happyking.top">开源端口</a></div></div><div class="footer-group"><h3 class="footer-title">后端</h3><div class="footer-links"><a class="footer-item" target="_blank" rel="noopener" href="https://calendar.happyking.top">日历获取</a><a class="footer-item" target="_blank" rel="noopener" href="https://7bu.top/">图片分发</a><a class="footer-item" target="_blank" rel="noopener" href="https://twikoo.happyking.top">评论系统</a><a class="footer-item" target="_blank" rel="noopener" href="https://status.happyking.top">状态监控</a></div></div><div class="footer-group"><h3 class="footer-title">分类</h3><div class="footer-links"><a class="footer-item" href="/categories/优质教程/">优质教程</a><a class="footer-item" href="/categories/魔改教程/">魔改教程</a><a class="footer-item" href="/categories/学习笔记/">学习笔记</a><a class="footer-item" href="/categories/代码开发/">代码开发</a></div></div><div class="footer-group"><h3 class="footer-title">标签</h3><div class="footer-links"><a class="footer-item" href="/tags/编程/">编程教学</a><a class="footer-item" href="/tags/流水账/">日常水文</a><a class="footer-item" href="/tags/随想/">胡思乱想</a><a class="footer-item" href="/tags/游戏/">游戏评测</a></div></div><div class="footer-group"><h3 class="footer-title">友链</h3><div class="footer-links"><a class="footer-item" target="_blank" rel="noopener" href="https://blog.zhheo.com/">张洪Heo</a><a class="footer-item" target="_blank" rel="noopener" href="https://immmmm.com/">林木木</a><a class="footer-item" target="_blank" rel="noopener" href="https://blog.dorakika.cn/">Dorakika</a><a class="footer-item" target="_blank" rel="noopener" href="https://noionion.top/">二猹</a></div><div class="footer-links" id="friend-links-in-footer"></div></div><div class="footer-group"><h3 class="footer-title">其他</h3><div class="footer-links"><img class="footer_item" src="/img/cdn.svg" title="本站由腾讯云提供cdn加速服务" width="100px" hight="100px"/></div></div></div><div id="footer-banner"><div class="footer-banner-links"><div class="footer-banner-left"><div class="footer-banner-left"><div id="footer-banner-tips"></div><script src="/js/main/footer/typed.min.js"></script><script>var typed = new Typed("#footer-banner-tips", {
+  strings: ["聚散無常，别来无恙.", "Gathering and dispersing are impermanent. I'll be all right."],
+  startDelay: 200,
+  backDelay: 2000,
+  typeSpeed: 100,
+  loop: true,
+  backSpeed: 20
+})
+</script></div></div><div class="footer-banner-right"><a class="footer-banner-link" target="_blank" rel="noopener" href="https://blog.happyking.top/about" title="欢乐小王哦">©欢乐小王 2020-至今</a><a class="footer-banner-link">|</a><a class="footer-banner-link" target="_blank" rel="noopener" href="https://beian.miit.gov.cn" title="ICP备案">鲁ICP备2022030058号-1</a><a class="footer-banner-link">|</a><a class="footer-banner-link" target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20230666" title="萌备">萌ICP备20230666号</a><a class="footer-banner-link">|</a><a class="footer-banner-link" target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html" title="本网站基于HEXO框架开发的">框架HEXO</a><a class="footer-banner-link">|</a><img class="footer-banner-link" src="https://api.netlify.com/api/v1/badges/a8294c13-1217-47db-a58f-3e720a31a028/deploy-status" title="站点状态"/></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><a id="switch_commentBarrage" href="javascript:switchCommentBarrage();" title="开关弹幕"><i class="fas fa-play-circle"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Algolia</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="iconfont icon-baidu"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="fas fa-comment"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="fa fa-link"></i><span>本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.click()"><i class="fa fa-arrows-alt"></i><span>全屏显示</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:kk.switchTheme();"><i class="fa fa-paper-plane"></i><span>主题切换</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.translate();"><i class="iconfont icon-fanti"></i><span>繁简转换</span></a><a class="rightMenu-item" href="javascript:rmf.switchReadMode();"><i class="fa fa-book"></i><span>阅读模式</span></a><a class="rightMenu-item" href="javascript:window.location.href=&quot;/cc&quot;;"><i class="fa fa-info-circle"></i><span>版权声明</span></a></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn1.tianli0.top/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn1.tianli0.top/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/main/snackbar/snackbar.min.js"></script><script src="https://cdn1.tianli0.top/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script src="https://cdn1.tianli0.top/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.happyking.top/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.vemoji)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.happyking.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      document.getElementById('twikoo-count').innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn1.tianli0.top/npm/twikoo@1.6.32/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.happyking.top/',
+        region: '',
+        pageSize: 3,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn1.tianli0.top/npm/twikoo@1.6.32/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script src="/js/jq.js"></script><script data-pjax defer async src="/js/custom.js" ></script><script defer src="/js/rightmenu.js"></script><script async src="/random/random.js"></script><script data-pjax async src="/js/background.js"></script><div id="fps"></div><script src="/js/fps.js"></script><script async src="/js/icon.js"></script><script charset="UTF-8" id="LA_COLLECT" src="/js/51la.js"></script><script> LA.init({id:"JpEoD1xif1bRQ9fx",ck:"JpEoD1xif1bRQ9fx"})</script><script src="https://cdn1.tianli0.top/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="/js/main/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/gallery/gallery3/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="/js/main/busuanzi.min.js"></script></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_3294602_1f1y3b7pyh2.js"></script><!-- hexo injector body_end end --></body></html>

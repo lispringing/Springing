@@ -1,0 +1,59 @@
+#barrage-container{
+	width: 100%;
+	height: 400px;
+	/*background: url("https://cdn1.tianli0.top/npm/happyking/link/1.webp");*/
+	background: var(--blockquote-bg);
+	background-size: cover;
+	background-position: center;
+	border-radius: 8px;
+	position: relative;
+}
+
+#barrage-container .barrage{
+	min-width: 150px;
+	max-width: 300px;
+	min-height: 80px;
+	max-height: 300px;
+	position: absolute;
+	padding: 8px;
+	background: rgba(0, 0, 0, 0.9);
+	border-radius: 8px;
+	color: #fff;
+	animation: barrageIn 0.3s cubic-bezier(.25,.01,.5,1.5);
+	transition: 1s;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#barrage-container .barrage.out{
+	opacity: 0;
+}
+@keyframes barrageIn{
+	0%{
+		transform: scale(0.1);
+	}
+	100%{
+		transform: scale(1.0);
+	}
+}
+
+
+
+#barrage-container .barrage .barrageHead{
+	height: 30px;
+	padding: 4px 0;
+	line-height: 22px;
+	font-size: 12px;
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+    display: flex;
+    justify-content: space-between;
+}
+#barrage-container .barrage .barrageAvatar{
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	border-radius: 50%;
+}
+#barrage-container .barrage .barrageContent{
+	font-size: 14px;
+}
