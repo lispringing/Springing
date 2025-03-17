@@ -4,4 +4,4 @@ db.json
 *.log
 .idea
 .DS_Store
-public
+public/
