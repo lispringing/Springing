@@ -30,11 +30,17 @@ HEXO:一个用于生成静态文件的框架，我们可以用它把一些文件
 >Windows系统请确保安装好node.js与Git这两个软件
 >Linux用户请确保已经安装好npm软件包
 >不知道怎么安装的请自行上网搜索
+
+
 ``` bash
 npm install -save
 ``` 
+
 生成静态文件
+
 ``` bash
 hexo g
 ``` 
+
+
 >这时候会生成一个public文件夹，网站的静态文件就存放在这里面
