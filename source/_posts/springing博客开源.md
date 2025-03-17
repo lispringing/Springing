@@ -2,7 +2,7 @@
 abbrlink: '20250312'
 categories:
 - - 
-cover: ./img/
+cover: ./img/67550e6ce77b9.png
 date: '2025-03-12'
 description: 春子的博客开源啦!
 password: null

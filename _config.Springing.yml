@@ -105,8 +105,8 @@ cover:
 
 #替换无法显示的图片
 error_img:
-  flink: https://bu.dusays.com/2023/07/14/64b14669d264f.webp
-  post_page: https://bu.dusays.com/2023/07/14/64b14669d264f.webp
+  flink: ./img/64b14669d264f.webp
+  post_page: ./img/64b14669d264f.webp
 
 #404页面
 error_404:
