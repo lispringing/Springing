@@ -2,43 +2,43 @@
   creativity_list:
     - name: Vue
       color: "#b8f0ae"
-      icon: ./img/63e2088b0582f.webp
+      icon: https://blog.springing.top/img/63e2088b0582f.webp
     - name: React
       color: "#222"
       icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K
     - name: Docker
       color: "#57b6e6"
-      icon: ./img/64b147fe39766.webp
+      icon: https://blog.springing.top/img/64b147fe39766.webp
     - name: Photoshop
       color: "#4082c3"
-      icon: ./img/64b207d815309.webp
+      icon: https://blog.springing.top/img/64b207d815309.webp
     - name: Node
       color: "#333"
-      icon: ./img/node-logo.svg
+      icon: https://blog.springing.top/img/node-logo.svg
     - name: Webpack
       color: "#2e3a41"
-      icon: https://bu.dusays.com/2023/07/15/64b207fea0a00.webp
+      icon: https://blog.springing.top/img/64b207fea0a00.webp
     - name: Pinia
       color: "#fff"
-      icon: ./img/pinia-logo.svg
+      icon: https://blog.springing.top/img/pinia-logo.svg
     - name: Python
       color: "#fff"
-      icon: https://bu.dusays.com/2023/07/15/64b20819dfad5.webp
+      icon: https://blog.springing.top/img/64b20819dfad5.webp
     - name: Vite
       color: "#937df7"
-      icon: ./img/vite-logo.svg
+      icon: https://blog.springing.top/img/vite-logo.svg
     - name: Java
       color: "#fff"
-      icon: https://bu.dusays.com/2023/07/15/64b2082b71c68.webp
+      icon: https://blog.springing.top/img/64b2082b71c68.webp
     - name: CSS3
       color: "#2c51db"
-      icon: https://bu.dusays.com/2023/07/15/64b208f88c3c9.webp
+      icon: https://blog.springing.top/img/64b208f88c3c9.webp
     - name: JS
       color: "#f7cb4f"
-      icon: https://bu.dusays.com/2023/07/15/64b2090f65cd2.webp
+      icon: https://blog.springing.top/img/64b2090f65cd2.webp
     - name: HTML
       color: "#e9572b"
-      icon: https://bu.dusays.com/2023/07/15/64b2092482d05.webp
+      icon: https://blog.springing.top/img/64b2092482d05.webp
     - name: Git
       color: "#df5b40"
-      icon: https://bu.dusays.com/2023/04/09/643293b10ccdd.webp
+      icon: https://blog.springing.top/img/643293b10ccdd.webp
