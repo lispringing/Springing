@@ -164,7 +164,7 @@ reward:
   enable: true
   coinAudio: /fonts/coin.mp3
   QR_code:
-     - img: https://bu.dusays.com/2023/07/14/64b14639c17ce.webp
+     - img: ./img/64b14639c17ce.webp
        link: 
        text: 微信
 
