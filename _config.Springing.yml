@@ -728,7 +728,7 @@ inject:
      - <script async src="/js/icon.js"></script> #网站十二生肖
 
      - <script charset="UTF-8" id="LA_COLLECT" src="/js/51la.js"></script> #51la统计代码
-     - <script> LA.init({id:"KmiaNk6BwfPEgwaz",ck:"KmiaNk6BwfPEgwaz"})</script> #51la统计密钥
+     - <script>LA.init({id:"Kmibt4mWCdLT4ICb",ck:"Kmibt4mWCdLT4ICb"})</script> #51la统计密钥
 
 
 
