@@ -2,7 +2,7 @@
 abbrlink: '20230109'
 categories:
 - - 代码开发
-cover: https://bu.dusays.com/2023/07/16/64b3589e5d432.webp
+cover: ./img/64b3589e5d432.webp
 date: '2023-01-09 19:57:40'
 description: null
 mathjax: true
