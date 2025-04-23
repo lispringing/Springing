@@ -4,7 +4,7 @@ categories:
 - 魔改教程 
 cover: ./img/67550e6ce77b9.png
 date: '2025-03-12'
-description: 春子的博客开源啦!
+description: 春子的博客开源啦!想好好久，终于把自己这很烂的代码拿出来了
 password: null
 tags:
 - 博客

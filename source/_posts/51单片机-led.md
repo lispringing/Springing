@@ -3,7 +3,7 @@ title: 单片机-LED
 cover: ./img/12121.jpg
 date: '2025-3-9'
 updated: '2025-3-9'
-description: 51单片机学习笔记
+description: 51单片机关于LED灯的一些基本知识，很简单，写的也很通俗易懂，给春子自己复习看的
 tags:
 - 51单片机
 categories:

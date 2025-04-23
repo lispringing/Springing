@@ -2,8 +2,6 @@
 title: butterfly主题分类界面魔改
 mathjax: true
 top: false
-swiper_index: 
-message: 
 date: 2022-04-12 15:35:37
 cover: https://bu.dusays.com/2023/07/16/64b359c43b4fb.webp
 categories: 魔改教程

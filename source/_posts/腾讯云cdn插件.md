@@ -4,7 +4,7 @@ categories:
 - - 代码开发
 cover: ./img/64b3589e5d432.webp
 date: '2023-01-09 19:57:40'
-description: null
+description: 由于我的网站使用了腾讯云cdn，但每次更新后cdn都要手动刷新，所以所特此写了这个自动刷新的插件来刷新cdn缓存
 mathjax: true
 password: null
 tags:
