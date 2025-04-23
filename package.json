@@ -23,6 +23,7 @@
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index-pin-top": "^0.2.2",
+    "hexo-generator-search": "^2.4.3",
     "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
     "hexo-lazyload-image": "^1.1.3",

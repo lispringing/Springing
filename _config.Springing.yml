@@ -45,13 +45,18 @@ social:
 
 #基于algolia的搜索模块
 algolia_search:
-  enable: true
+  enable: false
   hits:
     per_page: 6
 
 #本地搜索（和gulp压缩冲突,不开启)
 local_search:
-  enable: false
+  enable: true
+search:
+  path: search.xml  #这些是本地搜索配置用的，本地搜索需要安装插件哈
+  field: post
+  content: true
+  template: ./search.xml
 
 #mathiax数学公式
 mathjax:
