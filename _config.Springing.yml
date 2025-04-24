@@ -531,7 +531,7 @@ subtitle:
     - Gathering and dispersing are impermanent. I'll be all right.
 
 #加载动画
-preloader: true
+preloader: false
 
 #侧边栏
 aside:
