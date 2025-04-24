@@ -3,7 +3,7 @@ title: C#学习笔记
 mathjax: false
 top: false
 date: 2025-04-23 
-cover: ./img/e29c9fc6-5686-4406-81d2-d0a98ec659ad_1745378537625669424_origin~tplv-a9rns2rl98-image-dark-watermark.png
+cover: ./img/e29c9fc6-5686-4406-81d2-d0a98ec659ad_1745378537625669424_origin~tplv-a9rns2rl98-image-dark-watermark_compressed.png
 categories: 学习笔记
 tags:
   - 学习笔记
