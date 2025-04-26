@@ -531,7 +531,7 @@ subtitle:
     - Gathering and dispersing are impermanent. I'll be all right.
 
 #加载动画
-preloader: false
+preloader: true
 
 #侧边栏
 aside:
@@ -676,7 +676,7 @@ snackbar:
   bg_dark: '#' # The background color of Toast Notification in dark mode
 
 #预加载
-instantpage: true
+instantpage: false
 
 #盘古模块,
 pangu:

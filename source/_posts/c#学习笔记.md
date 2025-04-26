@@ -86,6 +86,55 @@ double doubleValue = 3.14;
 int intValue = (int) doubleValue; // 强制从 double 到 int，数据可能损失小数部分
 ```
 
+# c# if判断
+和c语言差不多一样，都是使用if else elseif这种
+比如说下面这是一个判断奇偶数的代码
+```c#
+using System;
+
+namespace c.biancheng.net //这里叫什么无所谓
+{
+    class Demo //老规矩叫什么无所谓
+    {
+        static void Main(string[] args){ 
+            int num = 12;
+            if(num % 2 == 0){
+                Console.WriteLine("{0}是偶数", num);
+                Console.ReadKey();
+            }
+        }
+    }
+}
+```
+>在这里要补充一个特殊变量，叫做布尔变量，它只有两种值 0和1 也就是true跟false，我们在代码中可以这样写。
+
+
+
+判断输入的用户名
+```c#
+using System;
+
+namespace lispringing
+{
+    class happyking
+    {
+        static void Main(){
+        Console.WriteLine("请输入您的用户名:")；
+        string userName = Console.ReadLine();；
+        bool name = userName == '小春子'；
+        if(name){
+            Console.WriteLine("太棒了是小春子，我们有救了")；
+        }
+        else if；
+        Console.WriteLine(userName)；
+        Console.ReadKey;
+      }
+    }
+}
+```
+
+
+
 
 
 
