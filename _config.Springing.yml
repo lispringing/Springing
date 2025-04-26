@@ -60,12 +60,12 @@ search:
 
 #mathiax数学公式
 mathjax:
-  enable: false
+  enable: true
   per_page: true
 
 #KaTeX数学公式
 katex:
-  enable: false
+  enable: true
   per_page: false
   hide_scrollbar: true
 
@@ -630,8 +630,8 @@ rightside_item_order:
   show: # toc,chat,comment
 
 # 图片放大查看模式(下面这两个二选一)
-medium_zoom: true
-fancybox: false 
+medium_zoom: false #这个打开了，会导致导航栏的显示名称的js废掉
+fancybox: false #这个跟pjax无刷冲突了，压根没法用
 
 # mermaid
 mermaid:
