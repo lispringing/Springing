@@ -9,9 +9,6 @@
     - name: Node
       color: "#333"
       icon: https://blog.springing.top/img/node-logo.svg
-    - name: Pinia
-      color: "#fff"
-      icon: https://blog.springing.top/img/pinia-logo.svg
     - name: Python
       color: "#fff"
       icon: https://blog.springing.top/img/64b20819dfad5.webp
@@ -30,6 +27,6 @@
     - name: Git
       color: "#df5b40"
       icon: https://blog.springing.top/img/643293b10ccdd.webp
-    - name: Git
+    - name: C
       color: "#fff"
       icon: https://blog.springing.top/img/83d0e3589733d04442e06b407518166.jpg
