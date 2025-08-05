@@ -3,7 +3,7 @@ title: butterfly主题分类界面魔改
 mathjax: true
 top: false
 date: 2022-04-12 15:35:37
-cover: https://bu.dusays.com/2023/07/16/64b359c43b4fb.webp
+cover: ./img/99911c8da461e602c87baef0cb58adf4.png
 categories: 魔改教程
 tags:
   - butterfly
@@ -17,7 +17,7 @@ abbrlink: 565531
 >这是F12爬的<a href="https://blog.eurkon.com/">eurkon</a>大佬的.
 
 ## 样式预览
-![](./img/64b359af9095d.webp)
+![](https://blog.springing.top/img/64b359af9095d.webp)
 
 ## 代码
 引入css文件（我的因为字体的原因,字体改为白色,你们因情况而定)
