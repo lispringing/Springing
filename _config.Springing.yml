@@ -36,7 +36,7 @@ copy:
 
 #个人简介下方的社交图标配置
 social:
-   iconfont icon-weixin1: weixin://contacts/profile/w2638526782 || 我的微信
+   iconfont icon-weixin1: weixin://contacts/profile/happyking_top || 我的微信
    iconfont icon-youjian: mailto:2638526782@qq.com || 邮件
    iconfont icon-zhihu-square-fill: https://www.zhihu.com/people/gui-hua-ju-zhu || 我的知乎首页
    iconfont icon-icon_bilibili-square: https://space.bilibili.com/433911318?spm_id_from=333.337.0.0 || 我的bilibili主页
