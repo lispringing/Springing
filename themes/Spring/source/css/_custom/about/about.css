@@ -176,7 +176,7 @@
 #about-page .about-statistic {
   min-height: 380px;
   width: 39%;
-  background: url(https://blog.springing.top/img/64b35783aa48c.webp) no-repeat top;
+  background: url(./img/64b35783aa48c.webp) no-repeat top;
   background-size: cover;
   color: white!important;
   overflow: hidden;
@@ -646,7 +646,7 @@
   transition: 2s ease-in-out;
 }
 .author-content-item.game-yuanshen {
-  background: url(https://blog.springing.top/img/cs.png) no-repeat top;
+  background: url(./img/cs.png) no-repeat top;
   background-size: cover;
   min-height: 300px;
   overflow: hidden;
@@ -699,14 +699,14 @@
 }
 
 .author-content-item.like-technology {
-  background: url(https://blog.springing.top/img/638f5f05ce1f7.webp) no-repeat;
+  background: url(./img/638f5f05ce1f7.webp) no-repeat;
   background-size: cover;
   min-height: 230px;
   color: white;
 }
 
 .author-content-item.like-music {
-  background: url(https://blog.springing.top/img/netease.jpg) no-repeat top;
+  background: url(./img/netease.jpg) no-repeat top;
   background-size: cover;
   min-height: 400px;
   color: white;
