@@ -1,8 +1,9 @@
 ---
-title: 什么是FPGA
+title: FPGA学习笔记
 mathjax: true
 top: false
 date: 2025-08-11 
+updated: '2025-08-11'
 cover: ./img/OIP-C.jpg
 categories: 学习笔记
 tags:

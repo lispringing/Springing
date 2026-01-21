@@ -197,9 +197,9 @@ post_pagination: 1
 
 #太久的文章提示
 noticeOutdate:
-  enable: false
+  enable: true
   style: flat # 样式:simple/flat
-  limit_day: 100 #多少天
+  limit_day: 200 #多少天
   position: top #显示的位置:top/bottom
   message_prev: 已经有
   message_next: 天没有更新了,其中的部分内容可能已经过时
@@ -538,7 +538,7 @@ aside:
   enable: true
   hide: false
   button: true
-  mobile: true #手机是否显示
+  mobile: false #手机是否显示
   position: right #位置
   card_author: #作者介绍卡片
     enable: true
@@ -547,10 +547,10 @@ aside:
       enable: false
       icon: iconfont icon-github
       text: 我的Github
-      link: https://github.com/XINGMOUREN
+      link: https://github.com/lispringing
   card_announcement: #公告栏
     enable: true
-    content: <p>博主大学课太多了，网站可能部分功能坏的，没空修，不用提醒博主，我有空就去修了</p><p>本站会默认缓存css,js以及部分页面文件用于优化访问速度,请悉知,如果遇到问题可以尝试Ctrl+F5进行缓存强制刷新</p><p>右键菜单中>主题切换选项可以切换主题,按Ctrl+右键可以打开原生菜单</p>
+    content: <p>本站会默认缓存css,js以及部分页面文件用于优化访问速度,请悉知,如果遇到问题可以尝试Ctrl+F5进行缓存强制刷新</p><p>右键菜单中>主题切换选项可以切换主题,按Ctrl+右键可以打开原生菜单</p>
   card_recent_post: #最近文章更新
     enable: true
     limit: 3 #显示多少个（设置为0显示全部）
@@ -592,7 +592,7 @@ runtimeshow:
 
 #最新评论
 newest_comments:
-  enable: true
+  enable: false
   sort_order: #不知道的就别瞎写
   limit: 3
   storage: 10 # unit: mins, save data to localStorage
