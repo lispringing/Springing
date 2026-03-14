@@ -45,13 +45,13 @@
 	font-size: 20px;
 }
 [data-theme=light]{
-	--kk-theme-color: #e0ffff;
+	--kk-theme-color: #ffffffce;
 	--kk-theme-color2: #4375ff;
 	--kk-border-gold: #4375ff;
 	--kk-border-white: rgb(255, 255, 255);
 	--kk-card-titleShadow: rgba(0,0,0,0.1);
 	--kk-card-textBg: #2eb9dc;
-	--kk-card-bg: #e1eaf9;
+	--kk-card-bg: #ffffffce;
 	--kk-card-titleBg-hover: #4375ff;
 	--kk-select: #4375ff;
 	--kk-colorText-bg: #C2D4F9;
@@ -283,7 +283,7 @@
 	transition: 0.3s;
 }
  #recent-posts .recent-post-item:hover .recent-post-info .content{
-	top: 124%;
+	top: 100%;
 	z-index: 20;
 }
 

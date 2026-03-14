@@ -102,7 +102,7 @@ cover:
   index_enable: true
   aside_enable: true
   archives_enable: true
-  position: both #文章封面显示的位置 both,right,left
+  position: left #文章封面显示的位置 both,right,left
   #没设置封面时，默认给文章加入以下封面
   default_cover:
      - https://bu.dusays.com/2023/07/14/64b145f64a0df.webp
@@ -660,7 +660,6 @@ note:
 pjax:
   enable: true
   exclude:
-     - /gallery/gallery3/
     # - xxxx
 
 # 引入aplayer的css和js文件(不要开启,不兼容sw)
