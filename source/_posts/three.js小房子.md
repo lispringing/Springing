@@ -3,7 +3,7 @@ title: 用three.js手搓一个3D小房子
 cover: ./img/微信图片_2026-01-23_230649_523.png
 date: '2026-1-21'
 updated: '2026-1-21'
-description: 假期浅浅的学了一下three.js，结合blender来做了一个小项目
+description: AI总结:春子假期学了一下three.js，结合blender来做了一个小项目
 tags:
 - 教程
 - 学习笔记

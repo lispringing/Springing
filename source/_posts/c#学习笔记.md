@@ -10,7 +10,7 @@ tags:
   - 学习笔记
   - 编程
 password:
-description: 小春子的c#学习笔记，里面的内容基本上是给春子自己看的，当然大家也可以当作复习教程看
+description: AI总结:小春子的c#学习笔记
 abbrlink: 20250423
 ---
 

@@ -986,7 +986,7 @@ u{
 }
   /*文章卡片封面背景大小控制*/
 .imgHover, .error404 #error-wrap .error-content .error-img img, .article-sort-item-img img, #recent-posts > .recent-post-item .post_cover img.post_bg, #aside-content .aside-list > .aside-list-item .thumbnail > img {
-  height: 120%;
+  height: 100%;
 }
 
 /*再见了公告栏*
@@ -994,6 +994,9 @@ u{
 	display: none!important;
    }
 /*隐藏几个版块*/
+.card-info{
+	display: none;
+}
 .card-categories{
 	display: none;
 }
@@ -1001,9 +1004,6 @@ u{
 	display: none;
 }
 .card-tags{
-	display: none;
-}
-div#category-bar{
 	display: none;
 }
 /*主页板块隐藏*/
