@@ -1,5 +1,5 @@
 ---
-title: 单片机-LED
+title: 51单片机-LED学习笔记
 cover: ./img/12121.jpg
 date: '2025-3-9'
 updated: '2025-3-9'
