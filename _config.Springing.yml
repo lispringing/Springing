@@ -730,8 +730,8 @@ inject:
      - <script src="/js/fps.js"></script> #帧率检测的js
      - <script async src="/js/icon.js"></script> #网站十二生肖
 
-     - <script charset="UTF-8" id="LA_COLLECT" src="/js/51la.js"></script> #51la统计代码
-     - <script>LA.init({id:"Kmibt4mWCdLT4ICb",ck:"Kmibt4mWCdLT4ICb"})</script> #51la统计密钥
+     #- <script charset="UTF-8" id="LA_COLLECT" src="/js/51la.js"></script> #51la统计代码
+     #- <script>LA.init({id:"Kmibt4mWCdLT4ICb",ck:"Kmibt4mWCdLT4ICb"})</script> #51la统计密钥
 
 
 

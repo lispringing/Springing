@@ -3,8 +3,8 @@
     .author-img
       img.no-lightbox(src='https://blog.springing.top/img/avatar.webp')
     .image-dot
-  p.p.center.logo.large 关于博主
-  p.p.center.small 做一个有趣的人
+  p.p.center.logo.large 关于春子
+  p.p.center.small 鹰击长空鲸霸海 不试怎知龙与蚯
   .author-content
     .author-content-item.myInfoAndSayHello
       .title1 你好，很高兴认识你👋
@@ -12,7 +12,7 @@
         | 我是
         span.inline-word 小春子
       .title1
-        | 是一名 学生、独立开发者、
+        | 是一名 老师 学生 独立开发者
         span.inline-word 博主
     .aboutsiteTips.author-content-item
       .author-content-item-tips 追求
@@ -81,21 +81,16 @@
             .circle(style='background:#937df7')
             .name 2024-至今 烟台大学在读学生
 
-
   .author-content
     .about-statistic.author-content-item
       .card-content
-        .author-content-item-tips 数据
-        span.author-content-item-title 访问统计
-        #statistic
-        .post-tips
-          | 统计支持：
-          a(href='https://invite.51.la/1NzKqTeb?target=V6', target='_blank', rel='noopener nofollow') 51LA
-        .banner-button-group
-          a.banner-button(onclick='pjax.loadUrl("/archives/")', data-pjax-state)
-            i.fas.fa-circle-arrow-up-right
-            |
-            span.banner-button-text 文章隧道
+        .author-content-item-tips 知识
+        span.author-content-item-title 春子目前掌握的知识
+        .careers-group
+          .careers-item
+            .circle
+            .name Html5 CSS3 JavaScript Blender建模 Three.js
+
     .author-content-item-group.column.mapAndInfo
       .author-content-item.map.single
         span.map-title
@@ -111,9 +106,9 @@
           |
           span.selfInfo-content(style='color:#c69043') 在读学生
         div
-          span.selfInfo-title 现在职业
+          span.selfInfo-title 主修方向
           |
-          span.selfInfo-content(style='color:#b04fe6') 大学生
+          span.selfInfo-content(style='color:#b04fe6') 电子信息科学与技术
 
   .author-content
     .author-content-item.personalities
@@ -134,9 +129,8 @@
     .author-content-item.maxim
       .author-content-item-tips 座右铭
       span.maxim-title
-        span(style='opacity:.6;margin-bottom:8px') 做一个有趣的人
-        |
-        span 干一些有趣的事
+        span(style='opacity:.6;margin-bottom:8px') 鹰击长空鲸霸海 
+        span 不试怎知龙与蚯
     .author-content-item.buff
       .card-content
         .author-content-item-tips 特长
@@ -161,11 +155,11 @@
           .tips.game-yuanshen-uid Steam好友代码:1223420053
     .author-content-item.historical-drama
       .card-content
-        .author-content-item-tips 最近在看
-        span.author-content-item-title Bibili
+        .author-content-item-tips 春子の小课堂
+        span.author-content-item-title 前往Bibili看春子的网课
         .content-bottom
           .banner-button-group
-            a.banner-button(onclick='window.open("https://bilibili.com")', data-pjax-state)
+            a.banner-button(onclick='window.open("https://space.bilibili.com/433911318")', data-pjax-state)
               i.fas.fa-circle-arrow-up-right
               |
               span.banner-button-text 点击跳转
@@ -186,7 +180,7 @@
         .content-bottom
           .tips 跟春子一起听音乐
         .banner-button-group
-          a.banner-button(onclick='window.open("https://music.163.com/playlist?id=3086097017&uct2=U2FsdGVkX18960jn5b0fnG+wK7jsJEFRzYyFQw+cJ9w=")', data-pjax-state)
+          a.banner-button(onclick='window.open("https://music.163.com/playlist?id=3086097017")', data-pjax-state)
             i.fas.fa-circle-arrow-up-right
             |
             span.banner-button-text 立即前往
@@ -198,7 +192,7 @@
     .author-content-item.single.reward
       .author-content-item-tips 致谢
       span.author-content-item-title 赞赏名单
-      .author-content-item-description 感谢金主爸爸们的赞赏,你们的赞赏让我创作更有动力
+      .author-content-item-description 感谢大家的赞赏,你们的赞赏让我创作更有动力
         each i in site.data.reward
           - let rawData = [...i.reward_list]
           .reward-list-all

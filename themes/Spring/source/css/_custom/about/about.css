@@ -671,7 +671,7 @@
   margin-right: 0.5rem;
 }
 .author-content-item.game-yuanshen::after {
-  box-shadow: 0 -69px 203px 11px #575d8b inset;
+  box-shadow: 0 -69px 203px 11px #d3d4db5f inset;
   position: absolute;
   content: "";
   width: 100%;
@@ -686,10 +686,10 @@
   background-size: cover;
   min-height: 300px;
   overflow: hidden;
-  color: rgb(82, 228, 208);
+  color: rgb(11, 110, 209);
 }
 .author-content-item.historical-drama::after {
-  box-shadow: 0 -48px 203px 11px #575d8b inset;
+  box-shadow: 0 -48px 203px 11px #b6bce587 inset;
   position: absolute;
   content: "";
   width: 100%;
