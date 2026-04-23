@@ -1,10 +1,6 @@
 <br />
 <p align="center">
-  <a href="https://blog.springing.top" target="blank">
-    <img src="https://www.springing.top/img/dog-black.webp" alt="Logo" width="156" height="156">
-  </a>
   <h2 align="center" style="font-weight: 600">Hexo-theme-Springing</h2>
-
   <p align="center">
     基于Hexo|开箱即用|高颜值的一款博客主题|框架
     <br />
@@ -15,8 +11,6 @@
     <br />
   </p>
 </p>
-
-![圆角-微信图片_20241208110900.webp](.img/67550e6ce77b9.webp)
 
 ==========================================================================
 # ❤️快速开始
