@@ -41,3 +41,13 @@ hexo s
 - 🌚 Light/Dark Mode 自动切换
 - 🖥️ 支持 PWA，可在 Chrome/Edge 里点击地址栏右边的 ➕ 安装到电脑
 - 🛠 持续更新
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=lispringing%2FSpringing&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=lispringing/Springing&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=lispringing/Springing&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=lispringing/Springing&type=date&legend=top-left" />
+ </picture>
+</a>
