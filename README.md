@@ -8,7 +8,7 @@
     基于Hexo|开箱即用|高颜值的一款博客主题|框架
     <br />
     <a href="https://blog.springing.top" target="blank"><strong>🌎 访问DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a href="#" target="blank"><strong>📦️ 下载安装包</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://github.com/lispringing/Springing/releases" target="blank"><strong>📦️ 下载安装包</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#" target="blank"><strong>💬 作者的话</strong></a>
     <br />
     <br />
