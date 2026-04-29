@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://blog.springing.top" target="blank">
-    <img src="https://www.springing.top/img/avatar.webp" alt="Logo" width="156" height="156">
+    <img src="/themes/Spring/source/img/avatar.webp" alt="Logo" width="156" height="156">
   </a>
   <h2 align="center" style="font-weight: 600">Hexo-theme-Springing</h2>
   <p align="center">
