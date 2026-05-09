@@ -16,11 +16,11 @@
   title: 插件|腾讯云cdn自动刷新插件(使用文档+实现原理)
   description: 这是一个Hexo使用腾讯云CDN自动刷新的插件，当你的博客启用了腾讯云的cdn后,每次部署完成后都要手动刷新cdn的缓存,故开发此插件配合腾讯云cdn使用
 
-- cover: http://blog.springing.top/img/64b14669d264f.webp
-  timeline: '2022-06-10'
-  link: /p/567845/
-  title: 等待上线
-  description: 等待上线
+- cover: https://blog.springing.top/img/Hexo%E4%BB%8B%E7%BB%8D.png
+  timeline: '2026-04-25'
+  link: /p/20260425/
+  title: FPGA＋RK3568实现车牌识别
+  description: 使用FPGA＋RK3568实现车牌识别
 
 - cover: ./img/b36f5edb-b893-4a0a-8e62-b17108359e73_1745470730411193019_origin~tplv-a9rns2rl98-image-dark-watermark_compressed.png
   timeline: '2023-01-05'

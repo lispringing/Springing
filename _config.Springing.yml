@@ -592,7 +592,7 @@ runtimeshow:
 
 #最新评论
 newest_comments:
-  enable: false
+  enable: true
   sort_order: #不知道的就别瞎写
   limit: 3
   storage: 10 # unit: mins, save data to localStorage
