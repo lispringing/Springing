@@ -18,7 +18,8 @@
 ![截图](/source/img/67550e6ce77b9.png)
 
 # 快速开始
-下载仓库源代码<br>
+下载仓库源代码
+
 安装npm插件
 ```
 npm install -save
@@ -27,10 +28,7 @@ npm install -save
 ```
 hexo ge
 ```
-本地预览
-```
-hexo s
-```
+根目录下的/public文件夹内的文件就是生成的html静态文件，将他们上传到服务器或者Github Pages即可
 
 # 特性
 
