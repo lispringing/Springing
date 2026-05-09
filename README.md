@@ -17,7 +17,7 @@
 
 ![截图](/source/img/67550e6ce77b9.png)
 
-# ❤️快速开始
+# 快速开始
 下载仓库源代码<br>
 安装npm插件
 ```
@@ -32,7 +32,7 @@ hexo ge
 hexo s
 ```
 
-# ✨ 特性
+# 特性
 
 >如果你有想要魔改的需求/好的想法，请提交issue
 
@@ -45,6 +45,9 @@ hexo s
 - 🌚 Light/Dark Mode 自动切换
 - 🖥️ 支持 PWA，可在 Chrome/Edge 里点击地址栏右边的 ➕ 安装到电脑
 - 🛠 持续更新
+
+# 命令操作一览
+
 
 ## Star History
 
