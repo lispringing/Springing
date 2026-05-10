@@ -107,8 +107,10 @@ header#page-header.full_page #site-info,
 	width: 285px;
   }
 #aside-content .card-info .author-info__description{
-	margin-left: -15px;
-	color:white;
+	margin: -2px 0 0 5px;
+	color: white;
+	text-align: left;
+	width: calc(100% - 85px);
 }
 #aside-content .card-info{
     background: url('https://blog.springing.top/img/9319e30db458c209dd39aba3def75e3.jpg');
