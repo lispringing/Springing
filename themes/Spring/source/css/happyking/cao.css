@@ -711,5 +711,292 @@ u{
 	color: var(--kk-theme-color);
 }
 
+/* ---------------- iOS glass style (default theme only) ---------------- */
+[data-theme='light'] {
+	--kk-theme-color: #0a84ff;
+	--kk-theme-color2: #5ac8fa;
+	--kk-border-gold: rgba(255, 255, 255, 0.72);
+	--kk-border-white: rgba(255, 255, 255, 0.55);
+	--kk-card-bg: rgba(255, 255, 255, 0.46);
+	--kk-colorText-bg: rgba(255, 255, 255, 0.34);
+	--caojunyi: rgba(19, 26, 38, 0.9);
+}
+
+[data-theme='light'] body {
+	background:
+		radial-gradient(1200px 620px at -12% -18%, rgba(138, 205, 255, 0.58), rgba(255, 255, 255, 0) 62%),
+		radial-gradient(900px 520px at 112% 14%, rgba(185, 230, 255, 0.5), rgba(255, 255, 255, 0) 58%),
+		linear-gradient(165deg, #edf4ff 0%, #f4f8ff 42%, #e9f2ff 100%);
+	background-attachment: fixed;
+}
+
+[data-theme='light'] .cardHover,
+[data-theme='light'] .layout > div:first-child:not(.recent-posts),
+[data-theme='light'] #recent-posts .recent-post-item,
+[data-theme='light'] #aside-content .card-widget:not(.card-info),
+[data-theme='light'] .layout > .recent-posts .pagination > *:not(.space),
+[data-theme='light'] .append-item,
+[data-theme='light'] #footer-wrap,
+[data-theme='light'] #pagination .page-number,
+[data-theme='light'] #pagination .extend {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.26)) !important;
+	border: 1px solid rgba(255, 255, 255, 0.72) !important;
+	box-shadow:
+		0 16px 38px rgba(10, 42, 80, 0.16),
+		inset 0 1px 0 rgba(255, 255, 255, 0.92),
+		inset 0 -1px 0 rgba(255, 255, 255, 0.24) !important;
+	backdrop-filter: blur(26px) saturate(190%);
+	-webkit-backdrop-filter: blur(26px) saturate(190%);
+}
+
+[data-theme='light'] .cardHover:hover,
+[data-theme='light'] .layout > div:first-child:not(.recent-posts):hover,
+[data-theme='light'] #recent-posts .recent-post-item:hover,
+[data-theme='light'] #aside-content .card-widget:not(.card-info):hover,
+[data-theme='light'] .layout > .recent-posts .pagination > *:not(.space):hover,
+[data-theme='light'] .append-item:hover {
+	box-shadow:
+		0 20px 46px rgba(9, 56, 106, 0.22),
+		inset 0 1px 0 rgba(255, 255, 255, 0.96),
+		inset 0 -1px 0 rgba(255, 255, 255, 0.28) !important;
+	border-color: rgba(255, 255, 255, 0.84) !important;
+}
+
+[data-theme='light'] #nav {
+	background: rgba(245, 250, 255, 0.34) !important;
+	backdrop-filter: blur(30px) saturate(195%);
+	-webkit-backdrop-filter: blur(30px) saturate(195%);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.56);
+	box-shadow: 0 10px 28px rgba(26, 72, 124, 0.14) !important;
+}
+
+[data-theme='light'] #nav a:hover {
+	background: rgba(10, 132, 255, 0.16);
+}
+
+[data-theme='light'] #nav .menus_items .menus_item .menus_item_child {
+	background: rgba(248, 252, 255, 0.74);
+	backdrop-filter: blur(26px) saturate(190%);
+	-webkit-backdrop-filter: blur(26px) saturate(190%);
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	box-shadow: 0 16px 38px rgba(18, 56, 95, 0.16);
+}
+
+[data-theme='light'] #page-header.not-top-img #nav,
+[data-theme='light'] #page-header.nav-fixed #nav {
+	background: rgba(245, 250, 255, 0.42) !important;
+}
+
+[data-theme='light'] #recent-posts .recent-post-item {
+	border-radius: 14px;
+	overflow: hidden;
+}
+
+[data-theme='light'] #aside-content .card-widget:not(.card-info),
+[data-theme='light'] .layout > div:first-child:not(.recent-posts) {
+	border-radius: 14px;
+}
+
+[data-theme='light'] #post .post-copyright {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(247, 252, 255, 0.34));
+	border: 1px solid rgba(255, 255, 255, 0.66);
+	box-shadow:
+		0 14px 30px rgba(16, 48, 89, 0.14),
+		inset 0 1px 0 rgba(255, 255, 255, 0.88);
+	backdrop-filter: blur(22px) saturate(180%);
+	-webkit-backdrop-filter: blur(22px) saturate(180%);
+}
+
+[data-theme='light'] #page-header.full_page #site-info {
+	background: rgba(242, 248, 255, 0.26);
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	backdrop-filter: blur(18px) saturate(160%);
+	-webkit-backdrop-filter: blur(18px) saturate(160%);
+	border-radius: 18px;
+	box-shadow: 0 12px 30px rgba(22, 64, 116, 0.15);
+}
+
+[data-theme='light'] #aside-content .card-info {
+	background-image: url('https://blog.springing.top/img/9319e30db458c209dd39aba3def75e3.jpg') !important;
+	background-size: cover !important;
+	background-position: center !important;
+	backdrop-filter: none !important;
+	-webkit-backdrop-filter: none !important;
+}
+
+/* unified liquid glass for dark mode + footer/panel/barrage */
+[data-theme='dark'] {
+	--kk-theme-color: #0a84ff;
+	--kk-theme-color2: #66b7ff;
+	--kk-border-gold: rgba(255, 255, 255, 0.18);
+	--kk-border-white: rgba(255, 255, 255, 0.14);
+	--kk-card-bg: rgba(22, 26, 34, 0.52);
+	--kk-colorText-bg: rgba(22, 26, 34, 0.42);
+	--caojunyi: rgba(236, 242, 255, 0.9);
+}
+
+[data-theme='dark'] body {
+	background:
+		radial-gradient(1200px 620px at -12% -18%, rgba(38, 96, 160, 0.36), rgba(8, 11, 17, 0) 62%),
+		radial-gradient(900px 520px at 112% 14%, rgba(25, 70, 124, 0.34), rgba(8, 11, 17, 0) 58%),
+		linear-gradient(165deg, #11151d 0%, #10141b 42%, #0f131a 100%);
+	background-attachment: fixed;
+}
+
+[data-theme='dark'] .cardHover,
+[data-theme='dark'] .layout > div:first-child:not(.recent-posts),
+[data-theme='dark'] #recent-posts .recent-post-item,
+[data-theme='dark'] #aside-content .card-widget:not(.card-info),
+[data-theme='dark'] .layout > .recent-posts .pagination > *:not(.space),
+[data-theme='dark'] .append-item,
+[data-theme='dark'] #footer-wrap,
+[data-theme='dark'] #pagination .page-number,
+[data-theme='dark'] #pagination .extend {
+	background: linear-gradient(135deg, rgba(34, 43, 57, 0.56), rgba(16, 22, 31, 0.48)) !important;
+	border: 1px solid rgba(255, 255, 255, 0.18) !important;
+	box-shadow:
+		0 16px 40px rgba(2, 8, 20, 0.48),
+		inset 0 1px 0 rgba(255, 255, 255, 0.12),
+		inset 0 -1px 0 rgba(255, 255, 255, 0.06) !important;
+	backdrop-filter: blur(26px) saturate(170%);
+	-webkit-backdrop-filter: blur(26px) saturate(170%);
+}
+
+[data-theme='dark'] .cardHover:hover,
+[data-theme='dark'] .layout > div:first-child:not(.recent-posts):hover,
+[data-theme='dark'] #recent-posts .recent-post-item:hover,
+[data-theme='dark'] #aside-content .card-widget:not(.card-info):hover,
+[data-theme='dark'] .layout > .recent-posts .pagination > *:not(.space):hover,
+[data-theme='dark'] .append-item:hover {
+	box-shadow:
+		0 20px 48px rgba(0, 8, 20, 0.56),
+		inset 0 1px 0 rgba(255, 255, 255, 0.18),
+		inset 0 -1px 0 rgba(255, 255, 255, 0.08) !important;
+	border-color: rgba(255, 255, 255, 0.26) !important;
+}
+
+[data-theme='dark'] #nav {
+	background: rgba(18, 24, 33, 0.56) !important;
+	backdrop-filter: blur(30px) saturate(185%);
+	-webkit-backdrop-filter: blur(30px) saturate(185%);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+	box-shadow: 0 12px 30px rgba(0, 8, 20, 0.46) !important;
+}
+
+[data-theme='dark'] #nav .menus_items .menus_item .menus_item_child {
+	background: rgba(19, 24, 33, 0.72);
+	backdrop-filter: blur(26px) saturate(170%);
+	-webkit-backdrop-filter: blur(26px) saturate(170%);
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	box-shadow: 0 18px 42px rgba(0, 8, 20, 0.52);
+}
+
+[data-theme='dark'] #page-header.not-top-img #nav,
+[data-theme='dark'] #page-header.nav-fixed #nav {
+	background: rgba(18, 24, 33, 0.62) !important;
+}
+
+[data-theme='light'] #footer,
+[data-theme='dark'] #footer {
+	background: transparent !important;
+}
+
+[data-theme='light'] #footer-wrap,
+[data-theme='dark'] #footer-wrap,
+[data-theme='light'] #footer-banner,
+[data-theme='dark'] #footer-banner {
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	border-radius: 14px;
+	backdrop-filter: blur(26px) saturate(180%);
+	-webkit-backdrop-filter: blur(26px) saturate(180%);
+}
+
+[data-theme='light'] #footer-wrap,
+[data-theme='light'] #footer-banner {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.3)) !important;
+	box-shadow: 0 16px 40px rgba(12, 46, 86, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.88);
+}
+
+[data-theme='dark'] #footer-wrap,
+[data-theme='dark'] #footer-banner {
+	background: linear-gradient(135deg, rgba(31, 39, 52, 0.62), rgba(16, 22, 31, 0.52)) !important;
+	box-shadow: 0 18px 44px rgba(0, 8, 20, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.13);
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+[data-theme='light'] #post-comment .comment-barrage-item,
+[data-theme='light'] #barrage-container .barrage {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(242, 250, 255, 0.28));
+	color: rgba(17, 26, 39, 0.92);
+	border: 1px solid rgba(255, 255, 255, 0.64);
+	backdrop-filter: blur(18px) saturate(170%);
+	-webkit-backdrop-filter: blur(18px) saturate(170%);
+}
+
+[data-theme='dark'] #post-comment .comment-barrage-item,
+[data-theme='dark'] #barrage-container .barrage {
+	background: linear-gradient(135deg, rgba(36, 44, 58, 0.74), rgba(18, 24, 32, 0.56));
+	color: rgba(237, 243, 255, 0.92);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(18px) saturate(155%);
+	-webkit-backdrop-filter: blur(18px) saturate(155%);
+}
+
+[data-theme='light'] #post-comment .comment-barrage-item .barrageHead,
+[data-theme='light'] #barrage-container .barrage .barrageHead {
+	border-bottom-color: rgba(31, 66, 106, 0.18);
+}
+
+[data-theme='dark'] #post-comment .comment-barrage-item .barrageHead,
+[data-theme='dark'] #barrage-container .barrage .barrageHead {
+	border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+
+[data-theme='light'] #setting-container {
+	background-color: rgba(167, 184, 206, 0.3);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+}
+
+[data-theme='dark'] #setting-container {
+	background-color: rgba(5, 8, 14, 0.5);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+}
+
+[data-theme='light'] #setting-container .setting,
+[data-theme='dark'] #setting-container .setting,
+[data-theme='light'] #twikoo .tk-content,
+[data-theme='dark'] #twikoo .tk-content,
+[data-theme='light'] #twikoo .tk-input,
+[data-theme='dark'] #twikoo .tk-input {
+	border: 1px solid rgba(255, 255, 255, 0.3) !important;
+	border-radius: 14px;
+	backdrop-filter: blur(20px) saturate(165%);
+	-webkit-backdrop-filter: blur(20px) saturate(165%);
+}
+
+[data-theme='light'] #setting-container .setting,
+[data-theme='light'] #twikoo .tk-content,
+[data-theme='light'] #twikoo .tk-input {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.68), rgba(245, 251, 255, 0.34)) !important;
+}
+
+[data-theme='dark'] #setting-container .setting,
+[data-theme='dark'] #twikoo .tk-content,
+[data-theme='dark'] #twikoo .tk-input {
+	background: linear-gradient(135deg, rgba(32, 39, 53, 0.7), rgba(16, 22, 31, 0.56)) !important;
+	border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+[data-theme='light'] #twikoo .tk-comment,
+[data-theme='dark'] #twikoo .tk-comment {
+	background: transparent !important;
+	border: none !important;
+	backdrop-filter: none !important;
+	-webkit-backdrop-filter: none !important;
+	box-shadow: none !important;
+}
+
 
 
