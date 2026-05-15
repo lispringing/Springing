@@ -1438,19 +1438,6 @@ color: var(--caojunyi)!important;
 #aside-content #card-toc .toc-percentage {
   display: none;
 }
-/*--------------------------------h1到hn的首标设置-----------------------------*/
-/* h2~6以此类推 */
-#article-container h1:before {
-  content: "✨";
-}
-/* h2~6以此类推 */
-#article-container h2:before {
-  content: "🎇";
-}
-/* h2~6以此类推 */
-#article-container h3:before {
-  content: "🧨";
-}
 /*twikoo的美化用的css*/
 /* 设置文字内容 :nth-child(1)的作用是选择第几个 */
 .el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(1):before {

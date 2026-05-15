@@ -1,0 +1,22 @@
+﻿# Knowledge base sections config
+# title: section title
+# description: optional description
+# tags: must match your posts' tag names exactly
+# limit: max number of posts displayed in this section
+sections:
+  - title: 编程开发
+    description: 编程与项目开发相关内容
+    tags:
+      - 编程
+      - 代码
+      - 代码开发
+    limit: 100
+
+  - title: 学习与笔记
+    description: 学习记录、笔记和知识点整理
+    tags:
+      - 学习笔记
+      - 笔记
+      - 知识点
+      - 教程
+    limit: 100

@@ -1,0 +1,52 @@
+#knowledge-page
+  #article-container
+    if page.content
+      .knowledge-intro!= page.content
+
+    - const knowledgeData = site.data && site.data.knowledge ? site.data.knowledge : {}
+    - const sections = Array.isArray(knowledgeData.sections) ? knowledgeData.sections : []
+    - const allPosts = site.posts && site.posts.toArray ? site.posts.toArray() : []
+
+    if sections.length
+      each section in sections
+        - const title = section && section.title ? section.title : '未命名分区'
+        - const description = section && section.description ? section.description : ''
+        - const limit = section && Number(section.limit) > 0 ? Number(section.limit) : 8
+        - const tags = section && Array.isArray(section.tags) ? section.tags.map(tag => String(tag).trim()).filter(Boolean) : []
+        - const posts = allPosts.filter(post => post && post.published !== false && post.tags && post.tags.data && post.tags.data.some(tag => tags.includes(tag.name))).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, limit)
+        .knowledge-section
+          .knowledge-section-head
+            h2.knowledge-section-title= title
+            if description
+              p.knowledge-section-desc= description
+            if tags.length
+              .knowledge-tags
+                each tagName in tags
+                  span.knowledge-tag= '#' + tagName
+
+          if posts.length
+            ul.knowledge-post-list
+              each article in posts
+                - const articleTitle = article.title || '未命名文章'
+                - const articleLink = article.link || article.path
+                - const articleDate = article.date ? date(article.date, 'YYYY-MM-DD') : ''
+                - const coverSource = article.cover === false ? article.randomcover : article.cover
+                - const summarySource = article.description ? strip_html(article.description) : strip_html(article.content || '')
+                - const summary = summarySource.length > 96 ? summarySource.slice(0, 96) + '...' : summarySource
+                li.knowledge-post-item
+                  a.knowledge-post-link(href=url_for(articleLink) title=articleTitle class=coverSource ? '' : 'no-cover')
+                    if coverSource
+                      .knowledge-post-cover
+                        img(src=url_for(coverSource) alt=articleTitle onerror=`this.onerror=null;this.src='${url_for(theme.error_img.post_page)}'`)
+                    else
+                      .knowledge-post-cover.knowledge-post-cover-fallback
+                    .knowledge-post-main
+                      h3.knowledge-post-title= articleTitle
+                      if summary
+                        p.knowledge-post-summary= summary
+                    if articleDate
+                      span.knowledge-post-date= articleDate
+          else
+            .knowledge-empty 该分区下暂无匹配文章，请检查标签配置。
+    else
+      .knowledge-empty 尚未配置知识库分区，请在 `source/_data/knowledge.yml` 中添加 sections。
