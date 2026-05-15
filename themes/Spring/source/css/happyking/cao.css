@@ -749,6 +749,10 @@ u{
 	-webkit-backdrop-filter: blur(26px) saturate(190%);
 }
 
+[data-theme='light'] #pagination .page-number.current {
+	color: #000 !important;
+}
+
 [data-theme='light'] .cardHover:hover,
 [data-theme='light'] .layout > div:first-child:not(.recent-posts):hover,
 [data-theme='light'] #recent-posts .recent-post-item:hover,
@@ -780,6 +784,32 @@ u{
 	-webkit-backdrop-filter: blur(26px) saturate(190%);
 	border: 1px solid rgba(255, 255, 255, 0.7);
 	box-shadow: 0 16px 38px rgba(18, 56, 95, 0.16);
+}
+
+[data-theme='light'] #rightMenu {
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(236, 246, 255, 0.36)) !important;
+	border: 1px solid rgba(255, 255, 255, 0.82) !important;
+	border-radius: 14px;
+	backdrop-filter: blur(28px) saturate(195%);
+	-webkit-backdrop-filter: blur(28px) saturate(195%);
+	box-shadow:
+		0 18px 42px rgba(12, 46, 86, 0.2),
+		inset 0 1px 0 rgba(255, 255, 255, 0.94),
+		inset 0 -1px 0 rgba(255, 255, 255, 0.32);
+	overflow: hidden;
+}
+
+[data-theme='light'] #rightMenu .rightMenu-group:not(:nth-last-child(1)) {
+	border-bottom-color: rgba(116, 154, 201, 0.32);
+}
+
+[data-theme='light'] #rightMenu .rightMenu-group .rightMenu-item {
+	color: rgba(17, 32, 52, 0.9);
+}
+
+[data-theme='light'] #rightMenu .rightMenu-group .rightMenu-item:hover {
+	background: rgba(10, 132, 255, 0.16);
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
 }
 
 [data-theme='light'] #page-header.not-top-img #nav,
@@ -889,6 +919,32 @@ u{
 	-webkit-backdrop-filter: blur(26px) saturate(170%);
 	border: 1px solid rgba(255, 255, 255, 0.16);
 	box-shadow: 0 18px 42px rgba(0, 8, 20, 0.52);
+}
+
+[data-theme='dark'] #rightMenu {
+	background: linear-gradient(135deg, rgba(36, 45, 59, 0.74), rgba(16, 22, 31, 0.58)) !important;
+	border: 1px solid rgba(255, 255, 255, 0.22) !important;
+	border-radius: 14px;
+	backdrop-filter: blur(28px) saturate(175%);
+	-webkit-backdrop-filter: blur(28px) saturate(175%);
+	box-shadow:
+		0 20px 46px rgba(0, 8, 20, 0.56),
+		inset 0 1px 0 rgba(255, 255, 255, 0.16),
+		inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+	overflow: hidden;
+}
+
+[data-theme='dark'] #rightMenu .rightMenu-group:not(:nth-last-child(1)) {
+	border-bottom-color: rgba(255, 255, 255, 0.16);
+}
+
+[data-theme='dark'] #rightMenu .rightMenu-group .rightMenu-item {
+	color: rgba(237, 243, 255, 0.92);
+}
+
+[data-theme='dark'] #rightMenu .rightMenu-group .rightMenu-item:hover {
+	background: rgba(10, 132, 255, 0.2);
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
 [data-theme='dark'] #page-header.not-top-img #nav,
