@@ -7,4 +7,4 @@ comments: false
 top_img: false
 ---
 
-这里会按 `source/_data/knowledge.yml` 中配置的标签分区，自动展示对应标签下的文章。
+这里会展示春子的知识库

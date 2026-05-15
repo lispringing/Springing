@@ -1,22 +1,18 @@
-﻿# Knowledge base sections config
-# title: section title
-# description: optional description
-# tags: must match your posts' tag names exactly
-# limit: max number of posts displayed in this section
-sections:
-  - title: 编程开发
-    description: 编程与项目开发相关内容
+﻿sections:
+  - title: 51单片机
+    description: 51单片机的一些知识
     tags:
-      - 编程
-      - 代码
-      - 代码开发
+      - 51单片机
     limit: 100
 
-  - title: 学习与笔记
-    description: 学习记录、笔记和知识点整理
+  - title: 杂七杂八
+    description: 一些杂七杂八的知识点
     tags:
-      - 学习笔记
-      - 笔记
       - 知识点
-      - 教程
+    limit: 100
+
+  - title: C#语言
+    description: C#语言的一些知识
+    tags:
+      - C#
     limit: 100
