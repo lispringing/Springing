@@ -18,8 +18,12 @@
 ![截图](/source/img/67550e6ce77b9.png)
 
 ## 快速开始
-下载仓库源代码
+>注意本项目修改的地方过多，不推荐使用标准的Hexo主题安装方式，建议直接clone整个仓库，通过npm install安装打包好的Hexo
 
+下载仓库源代码
+```
+git clone https://github.com/lispringing/Springing
+```
 安装npm插件
 ```
 npm install -save
