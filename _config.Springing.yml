@@ -762,7 +762,7 @@ CDN:
   disqusjs:
   disqusjs_css:
   utterances:
-  twikoo: https://cdn1.tianli0.top/npm/twikoo@1.6.32/dist/twikoo.all.min.js #前端版本
+  twikoo: https://cdn.jsdelivr.net/npm/twikoo@1.7.20/dist/twikoo.min.js #前端版本
   waline:
   giscus:
 
