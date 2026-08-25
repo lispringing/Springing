@@ -1,19 +1,11 @@
 - class_name: 博主
-  class_desc: 备战高考中,每晚10点回评论
+  class_desc: 一个有趣的人
   link_list:
-    - name: 欢乐小王
-      link: https://blog.happyking.top/
+    - name: 小春子
+      link: https://blog.springing.top/
       avatar: https://blog.springing.top/img/avatar.webp
-      siteshot: https://bu.dusays.com/2023/07/18/64b5e7deae6e8.webp
+      siteshot: ./img/link/微信图片_20260825144627_8857_224_compressed.png
       descr: 聚散无常,别来无恙.
-- class_name: 好友位
-  class_desc: 小王の好友(ps网站已经挂掉了)
-  link_list:
-    - name: Mars
-      link: http://wangyuning.site/
-      avatar: https://bu.dusays.com/2023/07/22/64bbe16079101.webp
-      siteshot: https://bu.dusays.com/2023/07/22/64bbe2027e1e5.webp
-      descr: 我们永不独行
 - class_name: 特别鸣谢
   class_desc: 博客搭建过程中的技术支持
   link_list:
